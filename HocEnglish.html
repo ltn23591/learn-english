@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vocabulary Learning App</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                background-color: #f0f0f0;
+            }
+            .container {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                width: 90%;
+                max-width: 600px;
+                text-align: center;
+            }
+            h1 {
+                color: #333;
+            }
+            .card {
+                margin: 20px 0;
+                padding: 15px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+            }
+            .cloze-sentence {
+                font-size: 1.2em;
+                margin-bottom: 10px;
+            }
+            .word-highlight {
+                background-color: #ffff99;
+                padding: 2px 5px;
+                border-radius: 3px;
+            }
+            .sentence-highlight {
+                font-style: italic;
+                color: #555;
+            }
+            .options {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .option {
+                padding: 10px 20px;
+                border: 1px solid #007bff;
+                border-radius: 5px;
+                background: #f8f9fa;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+            .option:hover {
+                background: #e9ecef;
+            }
+            .option.correct {
+                background: #28a745;
+                color: white;
+                border-color: #28a745;
+            }
+            .option.incorrect {
+                background: #dc3545;
+                color: white;
+                border-color: #dc3545;
+            }
+            .feedback {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+            .correct-feedback {
+                color: #28a745;
+            }
+            .incorrect-feedback {
+                color: #dc3545;
+            }
+            .tip,
+            .definition,
+            .example {
+                margin-top: 10px;
+                font-size: 0.9em;
+                color: #555;
+            }
+            button {
+                padding: 10px 20px;
+                background: #007bff;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 10px;
+            }
+            button:hover {
+                background: #0056b3;
+            }
+            .progress {
+                margin-bottom: 20px;
+                font-size: 1.1em;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Vocabulary Learning App</h1>
+            <div class="progress">
+                Question <span id="current-question">1</span> of
+                <span id="total-questions"></span>
+            </div>
+            <div class="card">
+                <div class="cloze-sentence" id="cloze-sentence"></div>
+                <div class="cloze-sentence" id="cloze-vietnamese"></div>
+                <div class="options" id="options"></div>
+                <div class="feedback" id="feedback"></div>
+                <div class="definition" id="english-def"></div>
+                <div class="definition" id="vietnamese-def"></div>
+                <div class="example" id="example"></div>
+                <div class="example" id="example-vietnamese"></div>
+                <div class="tip" id="tip"></div>
+            </div>
+            <button id="next-button" style="display: none">
+                Next Question
+            </button>
+        </div>
+
+        <script>
+            const vocabulary = [
+                {
+                    word: 'Queue',
+                    vietnamese: 'Hàng đợi',
+                    englishDef: 'A line of people waiting for something.',
+                    vietnameseDef: 'Dòng người chờ đợi điều gì đó.',
+                    clozeSentence:
+                        "We stood in a long <span class='word-highlight'>____</span> at the <span class='sentence-highlight'>supermarket</span>.",
+                    clozeVietnamese:
+                        "Chúng tôi đứng trong một <span class='word-highlight'>hàng đợi</span> dài ở <span class='sentence-highlight'>siêu thị</span>.",
+                    example:
+                        "The <span class='word-highlight'>queue</span> at the <span class='sentence-highlight'>ticket counter</span> was very long.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Hàng đợi</span> ở <span class='sentence-highlight'>quầy vé</span> rất dài.",
+                    options: ['Toy', 'Queue', 'Chair', 'Table'],
+                    tip: "Liên tưởng '<span class='word-highlight'>queue</span>' với 'Q' (hình chữ cái giống hàng người), nghĩa là <span class='word-highlight'>hàng đợi</span>.",
+                },
+                {
+                    word: 'Receipt',
+                    vietnamese: 'Biên lai',
+                    englishDef:
+                        'A document proving payment for goods or services.',
+                    vietnameseDef:
+                        'Tài liệu chứng minh việc thanh toán cho hàng hóa hoặc dịch vụ.',
+                    clozeSentence:
+                        "I kept the <span class='word-highlight'>____</span> from the <span class='sentence-highlight'>store</span> for returns.",
+                    clozeVietnamese:
+                        "Tôi giữ <span class='word-highlight'>biên lai</span> từ <span class='sentence-highlight'>cửa hàng</span> để đổi hàng.",
+                    example:
+                        "Always check your <span class='word-highlight'>receipt</span> after <span class='sentence-highlight'>shopping</span>.",
+                    exampleVietnamese:
+                        "Luôn kiểm tra <span class='word-highlight'>biên lai</span> sau khi <span class='sentence-highlight'>mua sắm</span>.",
+                    options: ['Receipt', 'Invoice', 'Ticket', 'Paper'],
+                    tip: "Nghĩ '<span class='word-highlight'>receipt</span>' như 'receive' (nhận), vì bạn nhận <span class='word-highlight'>biên lai</span> sau khi trả tiền.",
+                },
+                {
+                    word: 'Charger',
+                    vietnamese: 'Bộ sạc',
+                    englishDef: 'A device used to recharge a battery.',
+                    vietnameseDef: 'Thiết bị dùng để sạc lại pin.',
+                    clozeSentence:
+                        "I forgot my phone <span class='word-highlight'>____</span> at <span class='sentence-highlight'>home</span>.",
+                    clozeVietnamese:
+                        "Tôi quên <span class='word-highlight'>bộ sạc</span> điện thoại ở <span class='sentence-highlight'>nhà</span>.",
+                    example:
+                        "The <span class='word-highlight'>charger</span> for my <span class='sentence-highlight'>laptop</span> is broken.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Bộ sạc</span> cho <span class='sentence-highlight'>laptop</span> của tôi bị hỏng.",
+                    options: ['Lamp', 'Cable', 'Charger', 'Battery'],
+                    tip: "Liên kết '<span class='word-highlight'>charger</span>' với 'charge' (sạc), vì <span class='word-highlight'>bộ sạc</span> cung cấp năng lượng.",
+                },
+                {
+                    word: 'Doorbell',
+                    vietnamese: 'Chuông cửa',
+                    englishDef: 'A bell rung to signal someone is at the door.',
+                    vietnameseDef: 'Chuông reo để báo có người ở cửa.',
+                    clozeSentence:
+                        "The <span class='word-highlight'>____</span> rang when the <span class='sentence-highlight'>delivery arrived</span>.",
+                    clozeVietnamese:
+                        "<span class='word-highlight'>Chuông cửa</span> reo khi <span class='sentence-highlight'>hàng giao đến</span>.",
+                    example:
+                        "I heard the <span class='word-highlight'>doorbell</span> during <span class='sentence-highlight'>dinner</span>.",
+                    exampleVietnamese:
+                        "Tôi nghe <span class='word-highlight'>chuông cửa</span> trong lúc <span class='sentence-highlight'>ăn tối</span>.",
+                    options: ['Phone', 'Speaker', 'Doorbell', 'Clock'],
+                    tip: "Nghĩ '<span class='word-highlight'>doorbell</span>' như 'door' (cửa) và 'bell' (chuông), vì <span class='word-highlight'>chuông cửa</span> ở cửa.",
+                },
+                {
+                    word: 'Faucet',
+                    vietnamese: 'Vòi nước',
+                    englishDef: 'A device controlling the flow of water.',
+                    vietnameseDef: 'Thiết bị điều khiển dòng chảy của nước.',
+                    clozeSentence:
+                        "The kitchen <span class='word-highlight'>____</span> is <span class='sentence-highlight'>leaking</span>.",
+                    clozeVietnamese:
+                        "<span class='word-highlight'>Vòi nước</span> trong bếp đang <span class='sentence-highlight'>rò rỉ</span>.",
+                    example:
+                        "I turned on the <span class='word-highlight'>faucet</span> to <span class='sentence-highlight'>wash dishes</span>.",
+                    exampleVietnamese:
+                        "Tôi mở <span class='word-highlight'>vòi nước</span> để <span class='sentence-highlight'>rửa bát</span>.",
+                    options: ['Pipe', 'Faucet', 'Sink', 'Pump'],
+                    tip: "Liên tưởng '<span class='word-highlight'>faucet</span>' với 'flow', vì <span class='word-highlight'>vòi nước</span> điều khiển dòng nước.",
+                },
+                {
+                    word: 'Mailbox',
+                    vietnamese: 'Hộp thư',
+                    englishDef: 'A box for receiving mail.',
+                    vietnameseDef: 'Hộp để nhận thư.',
+                    clozeSentence:
+                        "I checked the <span class='word-highlight'>____</span> for <span class='sentence-highlight'>letters</span>.",
+                    clozeVietnamese:
+                        "Tôi kiểm tra <span class='word-highlight'>hộp thư</span> để lấy <span class='sentence-highlight'>thư</span>.",
+                    example:
+                        "The <span class='word-highlight'>mailbox</span> was full of <span class='sentence-highlight'>bills</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Hộp thư</span> đầy <span class='sentence-highlight'>hóa đơn</span>.",
+                    options: ['Mailbox', 'Trashcan', 'Giftbox', 'Cabinet'],
+                    tip: "Nghĩ '<span class='word-highlight'>mailbox</span>' như 'mail' (thư) và 'box' (hộp), vì <span class='word-highlight'>hộp thư</span> chứa thư.",
+                },
+                {
+                    word: 'Headphones',
+                    vietnamese: 'Tai nghe',
+                    englishDef: 'A device worn over ears to listen to audio.',
+                    vietnameseDef: 'Thiết bị đeo trên tai để nghe âm thanh.',
+                    clozeSentence:
+                        "I listen to <span class='sentence-highlight'>music</span> with my <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi nghe <span class='sentence-highlight'>nhạc</span> với <span class='word-highlight'>tai nghe</span>.",
+                    example:
+                        "My new <span class='word-highlight'>headphones</span> have great <span class='sentence-highlight'>sound</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Tai nghe</span> mới của tôi có <span class='sentence-highlight'>âm thanh</span> tuyệt vời.",
+                    options: ['Speaker', 'Headphones', 'Radio', 'Cable'],
+                    tip: "Liên kết '<span class='word-highlight'>headphones</span>' với 'head' (đầu), vì <span class='word-highlight'>tai nghe</span> đeo trên đầu.",
+                },
+                {
+                    word: 'Iron',
+                    vietnamese: 'Bàn là',
+                    englishDef: 'A device used to press clothes.',
+                    vietnameseDef: 'Thiết bị dùng để là quần áo.',
+                    clozeSentence:
+                        "I used the <span class='word-highlight'>____</span> to <span class='sentence-highlight'>smooth my shirt</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>bàn là</span> để <span class='sentence-highlight'>là phẳng áo</span>.",
+                    example:
+                        "The <span class='word-highlight'>iron</span> is too <span class='sentence-highlight'>hot</span> for silk.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Bàn là</span> quá <span class='sentence-highlight'>nóng</span> cho lụa.",
+                    options: ['Washer', 'Iron', 'Dryer', 'Needle'],
+                    tip: "Nghĩ '<span class='word-highlight'>iron</span>' như 'iron out' (làm phẳng), vì <span class='word-highlight'>bàn là</span> làm phẳng quần áo.",
+                },
+                {
+                    word: 'Lawnmower',
+                    vietnamese: 'Máy cắt cỏ',
+                    englishDef: 'A machine for cutting grass.',
+                    vietnameseDef: 'Máy dùng để cắt cỏ.',
+                    clozeSentence:
+                        "I used the <span class='word-highlight'>____</span> to <span class='sentence-highlight'>trim the lawn</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>máy cắt cỏ</span> để <span class='sentence-highlight'>cắt tỉa bãi cỏ</span>.",
+                    example:
+                        "The <span class='word-highlight'>lawnmower</span> needs <span class='sentence-highlight'>fuel</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Máy cắt cỏ</span> cần <span class='sentence-highlight'>nhiên liệu</span>.",
+                    options: ['Lawnmower', 'Harvester', 'Rake', 'Tiller'],
+                    tip: "Liên kết '<span class='word-highlight'>lawnmower</span>' với 'lawn' (bãi cỏ), vì <span class='word-highlight'>máy cắt cỏ</span> dùng cho cỏ.",
+                },
+                {
+                    word: 'Detergent',
+                    vietnamese: 'Chất tẩy rửa',
+                    englishDef: 'A substance used for cleaning.',
+                    vietnameseDef: 'Chất dùng để làm sạch.',
+                    clozeSentence:
+                        "I added <span class='word-highlight'>____</span> to the <span class='sentence-highlight'>washing machine</span>.",
+                    clozeVietnamese:
+                        "Tôi thêm <span class='word-highlight'>chất tẩy rửa</span> vào <span class='sentence-highlight'>máy giặt</span>.",
+                    example:
+                        "This <span class='word-highlight'>detergent</span> removes <span class='sentence-highlight'>stains</span> well.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Chất tẩy rửa</span> này loại bỏ <span class='sentence-highlight'>vết bẩn</span> tốt.",
+                    options: ['Water', 'Soap', 'Detergent', 'Oil'],
+                    tip: "Nghĩ '<span class='word-highlight'>detergent</span>' như 'deter' (ngăn), vì <span class='word-highlight'>chất tẩy rửa</span> ngăn vết bẩn.",
+                },
+                {
+                    word: 'Remote',
+                    vietnamese: 'Điều khiển từ xa',
+                    englishDef:
+                        'A device to control electronics from a distance.',
+                    vietnameseDef: 'Thiết bị điều khiển điện tử từ xa.',
+                    clozeSentence:
+                        "I lost the TV <span class='word-highlight'>____</span> on the <span class='sentence-highlight'>couch</span>.",
+                    clozeVietnamese:
+                        "Tôi làm mất <span class='word-highlight'>điều khiển từ xa</span> của TV trên <span class='sentence-highlight'>ghế sofa</span>.",
+                    example:
+                        "The <span class='word-highlight'>remote</span> controls the <span class='sentence-highlight'>air conditioner</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Điều khiển từ xa</span> điều khiển <span class='sentence-highlight'>máy lạnh</span>.",
+                    options: ['Button', 'Remote', 'Computer', 'Phone'],
+                    tip: "Liên tưởng '<span class='word-highlight'>remote</span>' với 'remove' (xa), vì <span class='word-highlight'>điều khiển từ xa</span> dùng từ khoảng cách.",
+                },
+                {
+                    word: 'Scissors',
+                    vietnamese: 'Cái kéo',
+                    englishDef: 'A tool with blades for cutting.',
+                    vietnameseDef: 'Dụng cụ có lưỡi để cắt.',
+                    clozeSentence:
+                        "I used <span class='word-highlight'>____</span> to cut the <span class='sentence-highlight'>paper</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>cái kéo</span> để cắt <span class='sentence-highlight'>giấy</span>.",
+                    example:
+                        "These <span class='word-highlight'>scissors</span> are very <span class='sentence-highlight'>sharp</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Cái kéo</span> này rất <span class='sentence-highlight'>sắc</span>.",
+                    options: ['Scissors', 'Knife', 'Pen', 'Ruler'],
+                    tip: "Nghĩ '<span class='word-highlight'>scissors</span>' như 'slice', vì <span class='word-highlight'>cái kéo</span> dùng để cắt.",
+                },
+                {
+                    word: 'Thermostat',
+                    vietnamese: 'Bộ điều nhiệt',
+                    englishDef: 'A device controlling temperature.',
+                    vietnameseDef: 'Thiết bị điều khiển nhiệt độ.',
+                    clozeSentence:
+                        "I adjusted the <span class='word-highlight'>____</span> to <span class='sentence-highlight'>cool the room</span>.",
+                    clozeVietnamese:
+                        "Tôi điều chỉnh <span class='word-highlight'>bộ điều nhiệt</span> để <span class='sentence-highlight'>làm mát phòng</span>.",
+                    example:
+                        "The <span class='word-highlight'>thermostat</span> keeps the <span class='sentence-highlight'>house warm</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Bộ điều nhiệt</span> giữ <span class='sentence-highlight'>nhà ấm</span>.",
+                    options: ['Airconditioner', 'Thermostat', 'Fan', 'Heater'],
+                    tip: "Liên kết '<span class='word-highlight'>thermostat</span>' với 'thermal' (nhiệt), vì <span class='word-highlight'>bộ điều nhiệt</span> điều chỉnh nhiệt độ.",
+                },
+                {
+                    word: 'Blender',
+                    vietnamese: 'Máy xay',
+                    englishDef: 'A machine for mixing or pureeing food.',
+                    vietnameseDef: 'Máy dùng để trộn hoặc nghiền thức ăn.',
+                    clozeSentence:
+                        "I made a <span class='sentence-highlight'>smoothie</span> with the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi làm <span class='sentence-highlight'>sinh tố</span> với <span class='word-highlight'>máy xay</span>.",
+                    example:
+                        "The <span class='word-highlight'>blender</span> is great for <span class='sentence-highlight'>soups</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Máy xay</span> tuyệt vời cho <span class='sentence-highlight'>súp</span>.",
+                    options: ['Blender', 'Oven', 'Juicer', 'Pot'],
+                    tip: "Nghĩ '<span class='word-highlight'>blender</span>' như 'blend' (trộn), vì <span class='word-highlight'>máy xay</span> trộn thức ăn.",
+                },
+                {
+                    word: 'Toaster',
+                    vietnamese: 'Máy nướng bánh',
+                    englishDef: 'A device for toasting bread.',
+                    vietnameseDef: 'Thiết bị để nướng bánh mì.',
+                    clozeSentence:
+                        "I used the <span class='word-highlight'>____</span> to make <span class='sentence-highlight'>toast</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>máy nướng bánh</span> để làm <span class='sentence-highlight'>bánh mì nướng</span>.",
+                    example:
+                        "The <span class='word-highlight'>toaster</span> burned my <span class='sentence-highlight'>bread</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Máy nướng bánh</span> làm cháy <span class='sentence-highlight'>bánh mì</span> của tôi.",
+                    options: ['Microwave', 'Toaster', 'Blender', 'Fryer'],
+                    tip: "Liên kết '<span class='word-highlight'>toaster</span>' với 'toast' (nướng), vì <span class='word-highlight'>máy nướng bánh</span> nướng bánh mì.",
+                },
+                {
+                    word: 'Flashlight',
+                    vietnamese: 'Đèn pin',
+                    englishDef: 'A portable light powered by batteries.',
+                    vietnameseDef: 'Đèn cầm tay chạy bằng pin.',
+                    clozeSentence:
+                        "I used a <span class='word-highlight'>____</span> during the <span class='sentence-highlight'>power outage</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>đèn pin</span> trong lúc <span class='sentence-highlight'>mất điện</span>.",
+                    example:
+                        "The <span class='word-highlight'>flashlight</span> helped me find my <span class='sentence-highlight'>keys</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Đèn pin</span> giúp tôi tìm <span class='sentence-highlight'>chìa khóa</span>.",
+                    options: [
+                        'Flashlight',
+                        'Desklight',
+                        'Nightlight',
+                        'Streetlight',
+                    ],
+                    tip: "Nghĩ '<span class='word-highlight'>flashlight</span>' như 'flash' (ánh sáng), vì <span class='word-highlight'>đèn pin</span> tạo ánh sáng.",
+                },
+                {
+                    word: 'Calendar',
+                    vietnamese: 'Lịch',
+                    englishDef: 'A chart showing days and months.',
+                    vietnameseDef: 'Biểu đồ hiển thị ngày và tháng.',
+                    clozeSentence:
+                        "I marked my <span class='sentence-highlight'>birthday</span> on the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi đánh dấu <span class='sentence-highlight'>sinh nhật</span> trên <span class='word-highlight'>lịch</span>.",
+                    example:
+                        "The <span class='word-highlight'>calendar</span> shows <span class='sentence-highlight'>holidays</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Lịch</span> hiển thị <span class='sentence-highlight'>ngày lễ</span>.",
+                    options: ['Notebook', 'Calendar', 'Clock', 'Map'],
+                    tip: "Liên kết '<span class='word-highlight'>calendar</span>' với 'count', vì <span class='word-highlight'>lịch</span> đếm ngày.",
+                },
+                {
+                    word: 'Notebook',
+                    vietnamese: 'Sổ tay',
+                    englishDef: 'A book for writing notes.',
+                    vietnameseDef: 'Sách để ghi chú.',
+                    clozeSentence:
+                        "I wrote my <span class='sentence-highlight'>ideas</span> in a <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi ghi <span class='sentence-highlight'>ý tưởng</span> vào <span class='word-highlight'>sổ tay</span>.",
+                    example:
+                        "My <span class='word-highlight'>notebook</span> is full of <span class='sentence-highlight'>sketches</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Sổ tay</span> của tôi đầy <span class='sentence-highlight'>bản phác thảo</span>.",
+                    options: ['Notebook', 'Book', 'Magazine', 'Newspaper'],
+                    tip: "Nghĩ '<span class='word-highlight'>notebook</span>' như 'note' (ghi chú), vì <span class='word-highlight'>sổ tay</span> dùng để ghi.",
+                },
+                {
+                    word: 'Sunscreen',
+                    vietnamese: 'Kem chống nắng',
+                    englishDef: 'A cream protecting skin from sunlight.',
+                    vietnameseDef: 'Kem bảo vệ da khỏi ánh nắng.',
+                    clozeSentence:
+                        "I applied <span class='word-highlight'>____</span> before going to the <span class='sentence-highlight'>beach</span>.",
+                    clozeVietnamese:
+                        "Tôi thoa <span class='word-highlight'>kem chống nắng</span> trước khi đi <span class='sentence-highlight'>biển</span>.",
+                    example:
+                        "<span class='word-highlight'>Sunscreen</span> prevents <span class='sentence-highlight'>sunburn</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Kem chống nắng</span> ngăn <span class='sentence-highlight'>cháy nắng</span>.",
+                    options: ['Lotion', 'Sunscreen', 'Soap', 'Shampoo'],
+                    tip: "Liên kết '<span class='word-highlight'>sunscreen</span>' với 'sun' (mặt trời), vì <span class='word-highlight'>kem chống nắng</span> bảo vệ khỏi nắng.",
+                },
+                {
+                    word: 'Trashcan',
+                    vietnamese: 'Thùng rác',
+                    englishDef: 'A container for waste.',
+                    vietnameseDef: 'Hộp đựng rác.',
+                    clozeSentence:
+                        "I threw the <span class='sentence-highlight'>wrapper</span> in the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi vứt <span class='sentence-highlight'>vỏ bọc</span> vào <span class='word-highlight'>thùng rác</span>.",
+                    example:
+                        "The <span class='word-highlight'>trashcan</span> is <span class='sentence-highlight'>full</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Thùng rác</span> đã <span class='sentence-highlight'>đầy</span>.",
+                    options: ['Mailbox', 'Trashcan', 'Cabinet', 'Giftbox'],
+                    tip: "Nghĩ '<span class='word-highlight'>trashcan</span>' như 'trash' (rác), vì <span class='word-highlight'>thùng rác</span> chứa rác.",
+                },
+                {
+                    word: 'Wallet',
+                    vietnamese: 'Ví tiền',
+                    englishDef: 'A small case for holding money and cards.',
+                    vietnameseDef: 'Hộp nhỏ để đựng tiền và thẻ.',
+                    clozeSentence:
+                        "I forgot my <span class='word-highlight'>____</span> at <span class='sentence-highlight'>home</span>.",
+                    clozeVietnamese:
+                        "Tôi quên <span class='word-highlight'>ví tiền</span> ở <span class='sentence-highlight'>nhà</span>.",
+                    example:
+                        "My <span class='word-highlight'>wallet</span> has my <span class='sentence-highlight'>ID card</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Ví tiền</span> của tôi có <span class='sentence-highlight'>thẻ căn cước</span>.",
+                    options: ['Backpack', 'Handbag', 'Wallet', 'Box'],
+                    tip: "Liên tưởng '<span class='word-highlight'>wallet</span>' với 'wealth' (giàu), vì <span class='word-highlight'>ví tiền</span> chứa tiền.",
+                },
+                {
+                    word: 'Sunglasses',
+                    vietnamese: 'Kính râm',
+                    englishDef: 'Glasses protecting eyes from sunlight.',
+                    vietnameseDef: 'Kính bảo vệ mắt khỏi ánh nắng.',
+                    clozeSentence:
+                        "I wore <span class='word-highlight'>____</span> on the <span class='sentence-highlight'>sunny day</span>.",
+                    clozeVietnamese:
+                        "Tôi đeo <span class='word-highlight'>kính râm</span> vào <span class='sentence-highlight'>ngày nắng</span>.",
+                    example:
+                        "My <span class='word-highlight'>sunglasses</span> are very <span class='sentence-highlight'>stylish</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Kính râm</span> của tôi rất <span class='sentence-highlight'>thời trang</span>.",
+                    options: [
+                        'Readingglasses',
+                        'Sunglasses',
+                        'Microscope',
+                        'Glasses',
+                    ],
+                    tip: "Liên kết '<span class='word-highlight'>sunglasses</span>' với 'sun', vì <span class='word-highlight'>kính râm</span> bảo vệ khỏi nắng.",
+                },
+                {
+                    word: 'Bicycle',
+                    vietnamese: 'Xe đạp',
+                    englishDef:
+                        'A vehicle with two wheels powered by pedaling.',
+                    vietnameseDef: 'Phương tiện hai bánh chạy bằng đạp.',
+                    clozeSentence:
+                        "I rode my <span class='word-highlight'>____</span> to the <span class='sentence-highlight'>park</span>.",
+                    clozeVietnamese:
+                        "Tôi đạp <span class='word-highlight'>xe đạp</span> đến <span class='sentence-highlight'>công viên</span>.",
+                    example:
+                        "The <span class='word-highlight'>bicycle</span> has a new <span class='sentence-highlight'>tire</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Xe đạp</span> có <span class='sentence-highlight'>lốp</span> mới.",
+                    options: ['Motorcycle', 'Bicycle', 'Car', 'Bus'],
+                    tip: "Nghĩ '<span class='word-highlight'>bicycle</span>' như 'bi' (hai), vì <span class='word-highlight'>xe đạp</span> có hai bánh.",
+                },
+                {
+                    word: 'Lipstick',
+                    vietnamese: 'Son môi',
+                    englishDef: 'A cosmetic for coloring lips.',
+                    vietnameseDef: 'Mỹ phẩm để tô màu môi.',
+                    clozeSentence:
+                        "She applied <span class='word-highlight'>____</span> before the <span class='sentence-highlight'>party</span>.",
+                    clozeVietnamese:
+                        "Cô ấy thoa <span class='word-highlight'>son môi</span> trước <span class='sentence-highlight'>bữa tiệc</span>.",
+                    example:
+                        "Her red <span class='word-highlight'>lipstick</span> looks <span class='sentence-highlight'>great</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Son môi</span> đỏ của cô ấy trông <span class='sentence-highlight'>tuyệt</span>.",
+                    options: ['Lipstick', 'Foundation', 'Blush', 'Eyeliner'],
+                    tip: "Liên kết '<span class='word-highlight'>lipstick</span>' với 'lip' (môi), vì <span class='word-highlight'>son môi</span> dùng cho môi.",
+                },
+                {
+                    word: 'Comb',
+                    vietnamese: 'Lược',
+                    englishDef: 'A tool for grooming hair.',
+                    vietnameseDef: 'Dụng cụ để chải tóc.',
+                    clozeSentence:
+                        "I used a <span class='word-highlight'>____</span> to <span class='sentence-highlight'>style my hair</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>lược</span> để <span class='sentence-highlight'>tạo kiểu tóc</span>.",
+                    example:
+                        "The <span class='word-highlight'>comb</span> is in my <span class='sentence-highlight'>bag</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Lược</span> ở trong <span class='sentence-highlight'>túi</span> của tôi.",
+                    options: ['Brush', 'Comb', 'Scissors', 'Dryer'],
+                    tip: "Nghĩ '<span class='word-highlight'>comb</span>' như 'calm', vì <span class='word-highlight'>lược</span> làm tóc gọn gàng.",
+                },
+                {
+                    word: 'Rug',
+                    vietnamese: 'Thảm',
+                    englishDef: 'A floor covering made of thick material.',
+                    vietnameseDef: 'Tấm phủ sàn làm từ vật liệu dày.',
+                    clozeSentence:
+                        "The <span class='word-highlight'>____</span> in the <span class='sentence-highlight'>living room</span> is soft.",
+                    clozeVietnamese:
+                        "<span class='word-highlight'>Thảm</span> trong <span class='sentence-highlight'>phòng khách</span> rất mềm.",
+                    example:
+                        "I vacuumed the <span class='word-highlight'>rug</span> <span class='sentence-highlight'>yesterday</span>.",
+                    exampleVietnamese:
+                        "Tôi hút bụi <span class='word-highlight'>thảm</span> <span class='sentence-highlight'>hôm qua</span>.",
+                    options: ['Curtain', 'Rug', 'Chair', 'Table'],
+                    tip: "Liên tưởng '<span class='word-highlight'>rug</span>' với 'rough' (thô), vì <span class='word-highlight'>thảm</span> thường dày.",
+                },
+                {
+                    word: 'Hanger',
+                    vietnamese: 'Móc áo',
+                    englishDef: 'A device for hanging clothes.',
+                    vietnameseDef: 'Thiết bị để treo quần áo.',
+                    clozeSentence:
+                        "I put my <span class='sentence-highlight'>jacket</span> on a <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi treo <span class='sentence-highlight'>áo khoác</span> lên <span class='word-highlight'>móc áo</span>.",
+                    example:
+                        "The <span class='word-highlight'>hanger</span> broke under the <span class='sentence-highlight'>weight</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Móc áo</span> gãy vì <span class='sentence-highlight'>trọng lượng</span>.",
+                    options: ['Wardrobe', 'Hanger', 'Shelf', 'Box'],
+                    tip: "Nghĩ '<span class='word-highlight'>hanger</span>' như 'hang' (treo), vì <span class='word-highlight'>móc áo</span> dùng để treo.",
+                },
+                {
+                    word: 'Sponge',
+                    vietnamese: 'Miếng bọt biển',
+                    englishDef:
+                        'A porous tool for cleaning or absorbing liquid.',
+                    vietnameseDef:
+                        'Dụng cụ xốp để làm sạch hoặc thấm chất lỏng.',
+                    clozeSentence:
+                        "I cleaned the <span class='sentence-highlight'>dishes</span> with a <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi rửa <span class='sentence-highlight'>bát</span> với <span class='word-highlight'>miếng bọt biển</span>.",
+                    example:
+                        "The <span class='word-highlight'>sponge</span> soaked up the <span class='sentence-highlight'>water</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Miếng bọt biển</span> thấm <span class='sentence-highlight'>nước</span>.",
+                    options: ['Cloth', 'Sponge', 'Brush', 'Rag'],
+                    tip: "Liên kết '<span class='word-highlight'>sponge</span>' với 'soak', vì <span class='word-highlight'>miếng bọt biển</span> thấm nước.",
+                },
+                {
+                    word: 'Napkin',
+                    vietnamese: 'Khăn giấy',
+                    englishDef:
+                        'A piece of cloth or paper for wiping mouth or hands.',
+                    vietnameseDef: 'Tấm vải hoặc giấy để lau miệng hoặc tay.',
+                    clozeSentence:
+                        "I used a <span class='word-highlight'>____</span> during <span class='sentence-highlight'>dinner</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>khăn giấy</span> trong <span class='sentence-highlight'>bữa tối</span>.",
+                    example:
+                        "The <span class='word-highlight'>napkin</span> fell on the <span class='sentence-highlight'>floor</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Khăn giấy</span> rơi xuống <span class='sentence-highlight'>sàn</span>.",
+                    options: ['Napkin', 'Towel', 'Mat', 'Curtain'],
+                    tip: "Nghĩ '<span class='word-highlight'>napkin</span>' như 'wipe', vì <span class='word-highlight'>khăn giấy</span> dùng để lau.",
+                },
+                {
+                    word: 'Ladder',
+                    vietnamese: 'Thang',
+                    englishDef: 'A structure for climbing up or down.',
+                    vietnameseDef: 'Cấu trúc để leo lên hoặc xuống.',
+                    clozeSentence:
+                        "I used a <span class='word-highlight'>____</span> to reach the <span class='sentence-highlight'>roof</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>thang</span> để lên <span class='sentence-highlight'>mái nhà</span>.",
+                    example:
+                        "The <span class='word-highlight'>ladder</span> is in the <span class='sentence-highlight'>garage</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Thang</span> ở trong <span class='sentence-highlight'>nhà để xe</span>.",
+                    options: ['Ladder', 'Staircase', 'Chair', 'Shelf'],
+                    tip: "Liên kết '<span class='word-highlight'>ladder</span>' với 'lead' (dẫn), vì <span class='word-highlight'>thang</span> dẫn bạn lên cao.",
+                },
+                {
+                    word: 'Candle',
+                    vietnamese: 'Nến',
+                    englishDef: 'A stick of wax with a wick for lighting.',
+                    vietnameseDef: 'Thanh sáp có bấc để thắp sáng.',
+                    clozeSentence:
+                        "I lit a <span class='word-highlight'>____</span> during the <span class='sentence-highlight'>power outage</span>.",
+                    clozeVietnamese:
+                        "Tôi thắp <span class='word-highlight'>nến</span> trong lúc <span class='sentence-highlight'>mất điện</span>.",
+                    example:
+                        "The <span class='word-highlight'>candle</span> smells like <span class='sentence-highlight'>vanilla</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Nến</span> có mùi <span class='sentence-highlight'>vani</span>.",
+                    options: ['Lamp', 'Candle', 'Fire', 'Oil'],
+                    tip: "Nghĩ '<span class='word-highlight'>candle</span>' như 'kindle' (châm), vì <span class='word-highlight'>nến</span> được châm sáng.",
+                },
+                {
+                    word: 'Vase',
+                    vietnamese: 'Bình hoa',
+                    englishDef: 'A container for holding flowers.',
+                    vietnameseDef: 'Hộp đựng hoa.',
+                    clozeSentence:
+                        "I put <span class='sentence-highlight'>flowers</span> in the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi đặt <span class='sentence-highlight'>hoa</span> vào <span class='word-highlight'>bình hoa</span>.",
+                    example:
+                        "The <span class='word-highlight'>vase</span> is on the <span class='sentence-highlight'>table</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Bình hoa</span> ở trên <span class='sentence-highlight'>bàn</span>.",
+                    options: ['Cup', 'Vase', 'Jar', 'Glass'],
+                    tip: "Liên kết '<span class='word-highlight'>vase</span>' với 'vessel', vì <span class='word-highlight'>bình hoa</span> là một loại bình.",
+                },
+                {
+                    word: 'Mug',
+                    vietnamese: 'Cái ca',
+                    englishDef: 'A large cup for drinking hot beverages.',
+                    vietnameseDef: 'Cốc lớn để uống đồ nóng.',
+                    clozeSentence:
+                        "I drank <span class='sentence-highlight'>coffee</span> from a <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi uống <span class='sentence-highlight'>cà phê</span> từ <span class='word-highlight'>cái ca</span>.",
+                    example:
+                        "My favorite <span class='word-highlight'>mug</span> has a <span class='sentence-highlight'>funny quote</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Cái ca</span> yêu thích của tôi có <span class='sentence-highlight'>câu trích dẫn vui</span>.",
+                    options: ['Mug', 'Cup', 'Bowl', 'Bottle'],
+                    tip: "Nghĩ '<span class='word-highlight'>mug</span>' như 'hug', vì <span class='word-highlight'>cái ca</span> ôm đồ uống nóng.",
+                },
+                {
+                    word: 'Bowl',
+                    vietnamese: 'Cái bát',
+                    englishDef: 'A round dish for food.',
+                    vietnameseDef: 'Dụng cụ tròn để đựng thức ăn.',
+                    clozeSentence:
+                        "I ate <span class='sentence-highlight'>soup</span> from a <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi ăn <span class='sentence-highlight'>súp</span> từ <span class='word-highlight'>cái bát</span>.",
+                    example:
+                        "The <span class='word-highlight'>bowl</span> is full of <span class='sentence-highlight'>fruit</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Cái bát</span> đầy <span class='sentence-highlight'>trái cây</span>.",
+                    options: ['Plate', 'Bowl', 'Pot', 'Pan'],
+                    tip: "Liên kết '<span class='word-highlight'>bowl</span>' với 'ball', vì <span class='word-highlight'>cái bát</span> có hình tròn.",
+                },
+                {
+                    word: 'Fan',
+                    vietnamese: 'Quạt',
+                    englishDef: 'A device for creating air flow.',
+                    vietnameseDef: 'Thiết bị tạo luồng không khí.',
+                    clozeSentence:
+                        "I turned on the <span class='word-highlight'>____</span> because it was <span class='sentence-highlight'>hot</span>.",
+                    clozeVietnamese:
+                        "Tôi bật <span class='word-highlight'>quạt</span> vì trời <span class='sentence-highlight'>nóng</span>.",
+                    example:
+                        "The <span class='word-highlight'>fan</span> is very <span class='sentence-highlight'>quiet</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Quạt</span> rất <span class='sentence-highlight'>yên tĩnh</span>.",
+                    options: ['Airconditioner', 'Fan', 'Heater', 'Lamp'],
+                    tip: "Nghĩ '<span class='word-highlight'>fan</span>' như 'wind', vì <span class='word-highlight'>quạt</span> tạo gió.",
+                },
+                {
+                    word: 'Lock',
+                    vietnamese: 'Ổ khóa',
+                    englishDef: 'A device for securing a door or container.',
+                    vietnameseDef: 'Thiết bị để khóa cửa hoặc hộp.',
+                    clozeSentence:
+                        "I used a <span class='word-highlight'>____</span> to secure my <span class='sentence-highlight'>bike</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>ổ khóa</span> để khóa <span class='sentence-highlight'>xe đạp</span>.",
+                    example:
+                        "The <span class='word-highlight'>lock</span> on the <span class='sentence-highlight'>door</span> is broken.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Ổ khóa</span> trên <span class='sentence-highlight'>cửa</span> bị hỏng.",
+                    options: ['Key', 'Lock', 'Hook', 'Chain'],
+                    tip: "Liên kết '<span class='word-highlight'>lock</span>' với 'block', vì <span class='word-highlight'>ổ khóa</span> chặn lối vào.",
+                },
+                {
+                    word: 'Pen',
+                    vietnamese: 'Bút',
+                    englishDef: 'A tool for writing with ink.',
+                    vietnameseDef: 'Dụng cụ để viết bằng mực.',
+                    clozeSentence:
+                        "I wrote a <span class='sentence-highlight'>note</span> with a <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi viết <span class='sentence-highlight'>ghi chú</span> bằng <span class='word-highlight'>bút</span>.",
+                    example:
+                        "My <span class='word-highlight'>pen</span> ran out of <span class='sentence-highlight'>ink</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Bút</span> của tôi hết <span class='sentence-highlight'>mực</span>.",
+                    options: ['Pen', 'Pencil', 'Ruler', 'Eraser'],
+                    tip: "Nghĩ '<span class='word-highlight'>pen</span>' như 'point', vì <span class='word-highlight'>bút</span> có đầu nhọn để viết.",
+                },
+                {
+                    word: 'Razor',
+                    vietnamese: 'Dao cạo',
+                    englishDef: 'A tool for shaving hair.',
+                    vietnameseDef: 'Dụng cụ để cạo lông.',
+                    clozeSentence:
+                        "I used a <span class='word-highlight'>____</span> to <span class='sentence-highlight'>shave my beard</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>dao cạo</span> để <span class='sentence-highlight'>cạo râu</span>.",
+                    example:
+                        "The <span class='word-highlight'>razor</span> is very <span class='sentence-highlight'>sharp</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Dao cạo</span> rất <span class='sentence-highlight'>sắc</span>.",
+                    options: ['Knife', 'Razor', 'Scissors', 'Shaver'],
+                    tip: "Liên kết '<span class='word-highlight'>razor</span>' với 'raise', vì <span class='word-highlight'>dao cạo</span> nâng lưỡi để cắt.",
+                },
+                {
+                    word: 'Slippers',
+                    vietnamese: 'Dép',
+                    englishDef: 'Comfortable shoes worn indoors.',
+                    vietnameseDef: 'Giày thoải mái mặc trong nhà.',
+                    clozeSentence:
+                        "I wore <span class='word-highlight'>____</span> around the <span class='sentence-highlight'>house</span>.",
+                    clozeVietnamese:
+                        "Tôi mang <span class='word-highlight'>dép</span> trong <span class='sentence-highlight'>nhà</span>.",
+                    example:
+                        "My <span class='word-highlight'>slippers</span> are very <span class='sentence-highlight'>cozy</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Dép</span> của tôi rất <span class='sentence-highlight'>êm ái</span>.",
+                    options: ['Shoes', 'Slippers', 'Socks', 'Sandals'],
+                    tip: "Nghĩ '<span class='word-highlight'>slippers</span>' như 'slip' (trượt), vì <span class='word-highlight'>dép</span> dễ mang.",
+                },
+                {
+                    word: 'Coat',
+                    vietnamese: 'Áo khoác',
+                    englishDef: 'A warm outer garment.',
+                    vietnameseDef: 'Quần áo ngoài giữ ấm.',
+                    clozeSentence:
+                        "I wore a <span class='word-highlight'>____</span> in the <span class='sentence-highlight'>cold weather</span>.",
+                    clozeVietnamese:
+                        "Tôi mặc <span class='word-highlight'>áo khoác</span> trong <span class='sentence-highlight'>thời tiết lạnh</span>.",
+                    example:
+                        "My new <span class='word-highlight'>coat</span> is <span class='sentence-highlight'>waterproof</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Áo khoác</span> mới của tôi <span class='sentence-highlight'>chống nước</span>.",
+                    options: ['Shirt', 'Coat', 'Sweater', 'Pants'],
+                    tip: "Liên kết '<span class='word-highlight'>coat</span>' với 'cover', vì <span class='word-highlight'>áo khoác</span> che cơ thể.",
+                },
+                {
+                    word: 'Suitcase',
+                    vietnamese: 'Va li',
+                    englishDef: 'A case for carrying clothes during travel.',
+                    vietnameseDef: 'Hộp đựng quần áo khi đi du lịch.',
+                    clozeSentence:
+                        "I packed my <span class='word-highlight'>____</span> for the <span class='sentence-highlight'>trip</span>.",
+                    clozeVietnamese:
+                        "Tôi đóng gói <span class='word-highlight'>va li</span> cho <span class='sentence-highlight'>chuyến đi</span>.",
+                    example:
+                        "The <span class='word-highlight'>suitcase</span> has <span class='sentence-highlight'>wheels</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Va li</span> có <span class='sentence-highlight'>bánh xe</span>.",
+                    options: ['Backpack', 'Handbag', 'Suitcase', 'Box'],
+                    tip: "Nghĩ '<span class='word-highlight'>suitcase</span>' như 'suit' (bộ đồ), vì <span class='word-highlight'>va li</span> chứa quần áo.",
+                },
+                {
+                    word: 'Gloves',
+                    vietnamese: 'Găng tay',
+                    englishDef: 'Coverings for hands to protect or warm them.',
+                    vietnameseDef: 'Vật che tay để bảo vệ hoặc giữ ấm.',
+                    clozeSentence:
+                        "I wore <span class='word-highlight'>____</span> in the <span class='sentence-highlight'>winter</span>.",
+                    clozeVietnamese:
+                        "Tôi đeo <span class='word-highlight'>găng tay</span> vào <span class='sentence-highlight'>mùa đông</span>.",
+                    example:
+                        "My <span class='word-highlight'>gloves</span> are made of <span class='sentence-highlight'>leather</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Găng tay</span> của tôi làm bằng <span class='sentence-highlight'>da</span>.",
+                    options: ['Socks', 'Gloves', 'Hat', 'Scarf'],
+                    tip: "Liên kết '<span class='word-highlight'>gloves</span>' với 'love', vì <span class='word-highlight'>găng tay</span> ôm tay ấm áp.",
+                },
+                {
+                    word: 'Pajamas',
+                    vietnamese: 'Đồ ngủ',
+                    englishDef: 'Clothes worn for sleeping.',
+                    vietnameseDef: 'Quần áo mặc để ngủ.',
+                    clozeSentence:
+                        "I changed into my <span class='word-highlight'>____</span> before <span class='sentence-highlight'>bed</span>.",
+                    clozeVietnamese:
+                        "Tôi thay <span class='word-highlight'>đồ ngủ</span> trước khi <span class='sentence-highlight'>đi ngủ</span>.",
+                    example:
+                        "My <span class='word-highlight'>pajamas</span> are very <span class='sentence-highlight'>comfortable</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Đồ ngủ</span> của tôi rất <span class='sentence-highlight'>thoải mái</span>.",
+                    options: ['Pajamas', 'Shirt', 'Jeans', 'Sweater'],
+                    tip: "Nghĩ '<span class='word-highlight'>pajamas</span>' như 'jam' (mềm), vì <span class='word-highlight'>đồ ngủ</span> mềm mại.",
+                },
+                {
+                    word: 'Backyard',
+                    vietnamese: 'Sân sau',
+                    englishDef: 'An area behind a house, often for recreation.',
+                    vietnameseDef: 'Khu vực phía sau nhà, thường để giải trí.',
+                    clozeSentence:
+                        "We played in the <span class='word-highlight'>____</span> <span class='sentence-highlight'>yesterday</span>.",
+                    clozeVietnamese:
+                        "Chúng tôi chơi ở <span class='word-highlight'>sân sau</span> <span class='sentence-highlight'>hôm qua</span>.",
+                    example:
+                        "The <span class='word-highlight'>backyard</span> has a <span class='sentence-highlight'>swing</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Sân sau</span> có <span class='sentence-highlight'>xích đu</span>.",
+                    options: ['Livingroom', 'Backyard', 'Kitchen', 'Balcony'],
+                    tip: "Liên kết '<span class='word-highlight'>backyard</span>' với 'back' (phía sau), vì <span class='word-highlight'>sân sau</span> ở sau nhà.",
+                },
+                {
+                    word: 'Porch',
+                    vietnamese: 'Hành lang',
+                    englishDef: 'A covered area at the entrance of a house.',
+                    vietnameseDef: 'Khu vực có mái che ở lối vào nhà.',
+                    clozeSentence:
+                        "We sat on the <span class='word-highlight'>____</span> during the <span class='sentence-highlight'>evening</span>.",
+                    clozeVietnamese:
+                        "Chúng tôi ngồi ở <span class='word-highlight'>hành lang</span> vào <span class='sentence-highlight'>buổi tối</span>.",
+                    example:
+                        "The <span class='word-highlight'>porch</span> has a <span class='sentence-highlight'>rocking chair</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Hành lang</span> có <span class='sentence-highlight'>ghế bập bênh</span>.",
+                    options: ['Yard', 'Porch', 'Bathroom', 'Basement'],
+                    tip: "Nghĩ '<span class='word-highlight'>porch</span>' như 'port' (cửa), vì <span class='word-highlight'>hành lang</span> ở lối vào.",
+                },
+                {
+                    word: 'Garage',
+                    vietnamese: 'Nhà để xe',
+                    englishDef: 'A building for storing vehicles.',
+                    vietnameseDef: 'Tòa nhà để chứa phương tiện.',
+                    clozeSentence:
+                        "I parked my <span class='sentence-highlight'>car</span> in the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi đỗ <span class='sentence-highlight'>xe</span> trong <span class='word-highlight'>nhà để xe</span>.",
+                    example:
+                        "The <span class='word-highlight'>garage</span> is full of <span class='sentence-highlight'>tools</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Nhà để xe</span> đầy <span class='sentence-highlight'>dụng cụ</span>.",
+                    options: ['Garage', 'Warehouse', 'Livingroom', 'Yard'],
+                    tip: "Liên kết '<span class='word-highlight'>garage</span>' với 'guard', vì <span class='word-highlight'>nhà để xe</span> bảo vệ xe.",
+                },
+                {
+                    word: 'Attic',
+                    vietnamese: 'Gác mái',
+                    englishDef:
+                        'A space under the roof of a house, often for storage.',
+                    vietnameseDef:
+                        'Không gian dưới mái nhà, thường để lưu trữ.',
+                    clozeSentence:
+                        "I found old <span class='sentence-highlight'>books</span> in the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi tìm thấy <span class='sentence-highlight'>sách cũ</span> ở <span class='word-highlight'>gác mái</span>.",
+                    example:
+                        "The <span class='word-highlight'>attic</span> is <span class='sentence-highlight'>dusty</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Gác mái</span> rất <span class='sentence-highlight'>bụi</span>.",
+                    options: ['Bedroom', 'Attic', 'Kitchen', 'Basement'],
+                    tip: "Nghĩ '<span class='word-highlight'>attic</span>' như 'top', vì <span class='word-highlight'>gác mái</span> ở trên cùng nhà.",
+                },
+                {
+                    word: 'Basement',
+                    vietnamese: 'Tầng hầm',
+                    englishDef: 'A floor below ground level in a house.',
+                    vietnameseDef: 'Tầng dưới mặt đất trong nhà.',
+                    clozeSentence:
+                        "We store <span class='sentence-highlight'>boxes</span> in the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Chúng tôi cất <span class='sentence-highlight'>hộp</span> ở <span class='word-highlight'>tầng hầm</span>.",
+                    example:
+                        "The <span class='word-highlight'>basement</span> is <span class='sentence-highlight'>cool</span> in summer.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Tầng hầm</span> <span class='sentence-highlight'>mát</span> vào mùa hè.",
+                    options: ['Basement', 'Attic', 'Livingroom', 'Yard'],
+                    tip: "Liên kết '<span class='word-highlight'>basement</span>' với 'base' (nền), vì <span class='word-highlight'>tầng hầm</span> ở dưới cùng.",
+                },
+                {
+                    word: 'Driveway',
+                    vietnamese: 'Lối vào xe',
+                    englishDef: 'A path for vehicles leading to a house.',
+                    vietnameseDef: 'Con đường cho xe dẫn vào nhà.',
+                    clozeSentence:
+                        "I parked my <span class='sentence-highlight'>car</span> in the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi đỗ <span class='sentence-highlight'>xe</span> ở <span class='word-highlight'>lối vào xe</span>.",
+                    example:
+                        "The <span class='word-highlight'>driveway</span> is covered in <span class='sentence-highlight'>snow</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Lối vào xe</span> phủ đầy <span class='sentence-highlight'>tuyết</span>.",
+                    options: ['Yard', 'Driveway', 'Porch', 'Street'],
+                    tip: "Nghĩ '<span class='word-highlight'>driveway</span>' như 'drive' (lái), vì <span class='word-highlight'>lối vào xe</span> là nơi lái xe vào.",
+                },
+                {
+                    word: 'Fence',
+                    vietnamese: 'Hàng rào',
+                    englishDef:
+                        'A structure surrounding an area for protection.',
+                    vietnameseDef: 'Cấu trúc bao quanh một khu vực để bảo vệ.',
+                    clozeSentence:
+                        "The <span class='word-highlight'>____</span> keeps the <span class='sentence-highlight'>dog</span> in the yard.",
+                    clozeVietnamese:
+                        "<span class='word-highlight'>Hàng rào</span> giữ <span class='sentence-highlight'>chó</span> trong sân.",
+                    example:
+                        "We painted the <span class='word-highlight'>fence</span> <span class='sentence-highlight'>white</span>.",
+                    exampleVietnamese:
+                        "Chúng tôi sơn <span class='word-highlight'>hàng rào</span> <span class='sentence-highlight'>màu trắng</span>.",
+                    options: ['Gate', 'Fence', 'Wall', 'Door'],
+                    tip: "Liên kết '<span class='word-highlight'>fence</span>' với 'defend', vì <span class='word-highlight'>hàng rào</span> bảo vệ khu vực.",
+                },
+                {
+                    word: 'Thermos',
+                    vietnamese: 'Bình giữ nhiệt',
+                    englishDef: 'A container that keeps liquids hot or cold.',
+                    vietnameseDef: 'Hộp giữ chất lỏng nóng hoặc lạnh.',
+                    clozeSentence:
+                        "I brought a <span class='word-highlight'>____</span> with <span class='sentence-highlight'>hot tea</span>.",
+                    clozeVietnamese:
+                        "Tôi mang <span class='word-highlight'>bình giữ nhiệt</span> với <span class='sentence-highlight'>trà nóng</span>.",
+                    example:
+                        "The <span class='word-highlight'>thermos</span> kept my <span class='sentence-highlight'>coffee</span> warm.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Bình giữ nhiệt</span> giữ <span class='sentence-highlight'>cà phê</span> của tôi ấm.",
+                    options: ['Cup', 'Thermos', 'Bottle', 'Box'],
+                    tip: "Liên kết '<span class='word-highlight'>thermos</span>' với 'thermal', vì <span class='word-highlight'>bình giữ nhiệt</span> giữ nhiệt độ.",
+                },
+                {
+                    word: 'Calculator',
+                    vietnamese: 'Máy tính',
+                    englishDef:
+                        'A device for performing mathematical calculations.',
+                    vietnameseDef: 'Thiết bị để thực hiện phép tính toán học.',
+                    clozeSentence:
+                        "I used a <span class='word-highlight'>____</span> for my <span class='sentence-highlight'>homework</span>.",
+                    clozeVietnamese:
+                        "Tôi dùng <span class='word-highlight'>máy tính</span> cho <span class='sentence-highlight'>bài tập</span>.",
+                    example:
+                        "The <span class='word-highlight'>calculator</span> is very <span class='sentence-highlight'>fast</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Máy tính</span> rất <span class='sentence-highlight'>nhanh</span>.",
+                    options: ['Notebook', 'Calculator', 'Pen', 'Ruler'],
+                    tip: "Nghĩ '<span class='word-highlight'>calculator</span>' như 'calculate' (tính), vì <span class='word-highlight'>máy tính</span> dùng để tính toán.",
+                },
+                {
+                    word: 'Umbrella',
+                    vietnamese: 'Ô',
+                    englishDef: 'A device for protection from rain.',
+                    vietnameseDef: 'Thiết bị bảo vệ khỏi mưa.',
+                    clozeSentence:
+                        "I opened my <span class='word-highlight'>____</span> when it <span class='sentence-highlight'>rained</span>.",
+                    clozeVietnamese:
+                        "Tôi mở <span class='word-highlight'>ô</span> khi trời <span class='sentence-highlight'>mưa</span>.",
+                    example:
+                        "My <span class='word-highlight'>umbrella</span> is <span class='sentence-highlight'>red</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Ô</span> của tôi <span class='sentence-highlight'>màu đỏ</span>.",
+                    options: ['Hat', 'Umbrella', 'Raincoat', 'Scarf'],
+                    tip: "Liên kết '<span class='word-highlight'>umbrella</span>' với 'under', vì <span class='word-highlight'>ô</span> che bạn khỏi mưa.",
+                },
+                {
+                    word: 'Briefcase',
+                    vietnamese: 'Cái cặp',
+                    englishDef: 'A flat case for carrying documents.',
+                    vietnameseDef: 'Hộp phẳng để mang tài liệu.',
+                    clozeSentence:
+                        "I carried my <span class='word-highlight'>____</span> to the <span class='sentence-highlight'>office</span>.",
+                    clozeVietnamese:
+                        "Tôi mang <span class='word-highlight'>cái cặp</span> đến <span class='sentence-highlight'>văn phòng</span>.",
+                    example:
+                        "The <span class='word-highlight'>briefcase</span> contains my <span class='sentence-highlight'>laptop</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Cái cặp</span> chứa <span class='sentence-highlight'>laptop</span> của tôi.",
+                    options: ['Backpack', 'Handbag', 'Briefcase', 'Box'],
+                    tip: "Nghĩ '<span class='word-highlight'>briefcase</span>' như 'brief' (ngắn), vì <span class='word-highlight'>cái cặp</span> chứa tài liệu ngắn gọn.",
+                },
+                {
+                    word: 'Alarm',
+                    vietnamese: 'Đồng hồ báo thức',
+                    englishDef: 'A device that makes a sound to wake someone.',
+                    vietnameseDef:
+                        'Thiết bị phát ra âm thanh để đánh thức ai đó.',
+                    clozeSentence:
+                        "My <span class='word-highlight'>____</span> rings at <span class='sentence-highlight'>6 AM</span>.",
+                    clozeVietnamese:
+                        "<span class='word-highlight'>Đồng hồ báo thức</span> của tôi reo lúc <span class='sentence-highlight'>6 giờ sáng</span>.",
+                    example:
+                        "The <span class='word-highlight'>alarm</span> woke me up <span class='sentence-highlight'>early</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Đồng hồ báo thức</span> đánh thức tôi <span class='sentence-highlight'>sớm</span>.",
+                    options: ['Clock', 'Alarm', 'Bell', 'Lamp'],
+                    tip: "Liên kết '<span class='word-highlight'>alarm</span>' với 'alert', vì <span class='word-highlight'>đồng hồ báo thức</span> báo thức bạn.",
+                },
+            ];
+
+            let currentIndex = 0;
+            let answered = false;
+
+            const clozeSentence = document.getElementById('cloze-sentence');
+            const clozeVietnamese = document.getElementById('cloze-vietnamese');
+            const optionsContainer = document.getElementById('options');
+            const feedback = document.getElementById('feedback');
+            const englishDef = document.getElementById('english-def');
+            const vietnameseDef = document.getElementById('vietnamese-def');
+            const example = document.getElementById('example');
+            const exampleVietnamese =
+                document.getElementById('example-vietnamese');
+            const tip = document.getElementById('tip');
+            const nextButton = document.getElementById('next-button');
+            const currentQuestion = document.getElementById('current-question');
+            const totalQuestions = document.getElementById('total-questions');
+
+            function shuffle(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            function loadQuestion() {
+                const item = vocabulary[currentIndex];
+                clozeSentence.innerHTML = item.clozeSentence.replace(
+                    '____',
+                    '____',
+                );
+                clozeVietnamese.innerHTML = item.clozeVietnamese;
+                englishDef.textContent = `English: ${item.englishDef}`;
+                vietnameseDef.textContent = `Vietnamese: ${item.vietnameseDef}`;
+                example.innerHTML = `Example: ${item.example}`;
+                exampleVietnamese.innerHTML = `Ví dụ: ${item.exampleVietnamese}`;
+                tip.innerHTML = `Tip: ${item.tip}`;
+                feedback.textContent = '';
+                optionsContainer.innerHTML = '';
+                answered = false;
+                nextButton.style.display = 'none';
+
+                const shuffledOptions = shuffle([...item.options]);
+                shuffledOptions.forEach((option) => {
+                    const button = document.createElement('div');
+                    button.className = 'option';
+                    button.textContent = option;
+                    button.onclick = () => checkAnswer(option, item.word);
+                    optionsContainer.appendChild(button);
+                });
+
+                currentQuestion.textContent = currentIndex + 1;
+                totalQuestions.textContent = vocabulary.length;
+            }
+
+            function checkAnswer(selected, correct) {
+                if (answered) return;
+                answered = true;
+                const buttons = optionsContainer.querySelectorAll('.option');
+                buttons.forEach((button) => {
+                    button.style.pointerEvents = 'none';
+                    if (button.textContent === correct) {
+                        button.classList.add('correct');
+                    }
+                    if (
+                        button.textContent === selected &&
+                        selected !== correct
+                    ) {
+                        button.classList.add('incorrect');
+                    }
+                });
+                feedback.textContent =
+                    selected === correct
+                        ? 'Correct!'
+                        : `Incorrect. The correct answer is "${correct}".`;
+                feedback.className = `feedback ${
+                    selected === correct
+                        ? 'correct-feedback'
+                        : 'incorrect-feedback'
+                }`;
+                nextButton.style.display = 'block';
+            }
+
+            nextButton.onclick = () => {
+                currentIndex = (currentIndex + 1) % vocabulary.length;
+                loadQuestion();
+            };
+
+            loadQuestion();
+        </script>
+    </body>
+</html>
