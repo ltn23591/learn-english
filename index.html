@@ -137,1688 +137,1043 @@
         <script>
             const vocabulary = [
                 {
-                    word: "Charger",
-                    vietnamese: "Bộ sạc",
-                    englishDef: "A device used to recharge a battery.",
-                    vietnameseDef: "Thiết bị dùng để sạc lại pin.",
+                    word: 'Kettle',
+                    vietnamese: 'Ấm đun nước',
+                    englishDef: 'A device used to boil water.',
+                    vietnameseDef: 'Thiết bị dùng để đun sôi nước.',
                     clozeSentence:
-                        "I forgot my phone <span class='word-highlight'>____</span> at <span class='sentence-highlight'>home</span>.",
+                        "I filled the <span class='word-highlight'>____</span> to make <span class='sentence-highlight'>tea</span>.",
                     clozeVietnamese:
-                        "Tôi quên <span class='word-highlight'>bộ sạc</span> điện thoại ở <span class='sentence-highlight'>nhà</span>.",
+                        "Tôi đổ nước vào <span class='word-highlight'>ấm đun nước</span> để pha <span class='sentence-highlight'>trà</span>.",
                     example:
-                        "The <span class='word-highlight'>charger</span> for my <span class='sentence-highlight'>laptop</span> is broken.",
+                        "The <span class='word-highlight'>kettle</span> whistled when the <span class='sentence-highlight'>water boiled</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Bộ sạc</span> cho <span class='sentence-highlight'>laptop</span> của tôi bị hỏng.",
-                    options: ["Lamp", "Cable", "Charger", "Battery"],
-                    tip: "Liên kết '<span class='word-highlight'>charger</span>' với 'charge' (sạc), vì <span class='word-highlight'>bộ sạc</span> cung cấp năng lượng.",
+                        "<span class='word-highlight'>Ấm đun nước</span> kêu khi <span class='sentence-highlight'>nước sôi</span>.",
+                    options: ['Pot', 'Kettle', 'Cup', 'Pan'],
+                    tip: "Liên kết '<span class='word-highlight'>kettle</span>' với 'heat', vì <span class='word-highlight'>ấm đun nước</span> dùng để đun nóng.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        forgot: { viet: "quên", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        phone: { viet: "điện thoại", pos: "noun" },
-                        at: { viet: "ở", pos: "preposition" },
-                        home: { viet: "nhà", pos: "noun" },
-                        Charger: { viet: "Bộ sạc", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        recharge: { viet: "sạc lại", pos: "verb" },
-                        battery: { viet: "pin", pos: "noun" },
-                        for: { viet: "cho", pos: "preposition" },
-                        laptop: { viet: "laptop", pos: "noun" },
-                        is: { viet: "bị", pos: "verb" },
-                        broken: { viet: "hỏng", pos: "adjective" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        filled: { viet: 'đổ', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        to: { viet: 'để', pos: 'preposition' },
+                        make: { viet: 'pha', pos: 'verb' },
+                        tea: { viet: 'trà', pos: 'noun' },
+                        Kettle: { viet: 'Ấm đun nước', pos: 'noun' },
+                        device: { viet: 'thiết bị', pos: 'noun' },
+                        boil: { viet: 'đun sôi', pos: 'verb' },
+                        water: { viet: 'nước', pos: 'noun' },
+                        whistled: { viet: 'kêu', pos: 'verb' },
+                        when: { viet: 'khi', pos: 'conjunction' },
+                        boiled: { viet: 'sôi', pos: 'verb' },
                     },
                 },
                 {
-                    word: "Doorbell",
-                    vietnamese: "Chuông cửa",
-                    englishDef: "A bell rung to signal someone is at the door.",
-                    vietnameseDef: "Chuông reo để báo có người ở cửa.",
+                    word: 'Lock',
+                    vietnamese: 'Ổ khóa',
+                    englishDef: 'A device used to secure doors or containers.',
+                    vietnameseDef: 'Thiết bị dùng để khóa cửa hoặc hộp.',
                     clozeSentence:
-                        "The <span class='word-highlight'>____</span> rang when the <span class='sentence-highlight'>delivery arrived</span>.",
+                        "I used the <span class='word-highlight'>____</span> to secure the <span class='sentence-highlight'>gate</span>.",
                     clozeVietnamese:
-                        "<span class='word-highlight'>Chuông cửa</span> reo khi <span class='sentence-highlight'>hàng giao đến</span>.",
+                        "Tôi dùng <span class='word-highlight'>ổ khóa</span> để khóa < EACH class='sentence-highlight'>cổng</span>.",
                     example:
-                        "I heard the <span class='word-highlight'>doorbell</span> during <span class='sentence-highlight'>dinner</span>.",
+                        "The <span class='word-highlight'>lock</span> on the <span class='sentence-highlight'>door</span> is broken.",
                     exampleVietnamese:
-                        "Tôi nghe <span class='word-highlight'>chuông cửa</span> trong lúc <span class='sentence-highlight'>ăn tối</span>.",
-                    options: ["Phone", "Speaker", "Doorbell", "Clock"],
-                    tip: "Nghĩ '<span class='word-highlight'>doorbell</span>' như 'door' (cửa) và 'bell' (chuông), vì <span class='word-highlight'>chuông cửa</span> ở cửa.",
+                        "<span class='word-highlight'>Ổ khóa</span> trên <span class='sentence-highlight'>cửa</span> bị hỏng.",
+                    options: ['Key', 'Lock', 'Chain', 'Bolt'],
+                    tip: "Nghĩ '<span class='word-highlight'>lock</span>' như 'block', vì <span class='word-highlight'>ổ khóa</span> ngăn chặn lối vào.",
                     wordMap: {
-                        The: { viet: "", pos: "article" },
-                        rang: { viet: "reo", pos: "verb" },
-                        when: { viet: "khi", pos: "conjunction" },
-                        delivery: { viet: "hàng giao", pos: "noun" },
-                        arrived: { viet: "đến", pos: "verb" },
-                        Doorbell: { viet: "Chuông cửa", pos: "noun" },
-                        bell: { viet: "chuông", pos: "noun" },
-                        rung: { viet: "reo", pos: "verb" },
-                        signal: { viet: "báo", pos: "verb" },
-                        someone: { viet: "ai đó", pos: "pronoun" },
-                        at: { viet: "ở", pos: "preposition" },
-                        door: { viet: "cửa", pos: "noun" },
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        heard: { viet: "nghe", pos: "verb" },
-                        during: { viet: "trong lúc", pos: "preposition" },
-                        dinner: { viet: "ăn tối", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        used: { viet: 'dùng', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        to: { viet: 'để', pos: 'preposition' },
+                        secure: { viet: 'khóa', pos: 'verb' },
+                        gate: { viet: 'cổng', pos: 'noun' },
+                        Lock: { viet: 'Ổ khóa', pos: 'noun' },
+                        device: { viet: 'thiết bị', pos: 'noun' },
+                        doors: { viet: 'cửa', pos: 'noun' },
+                        containers: { viet: 'hộp', pos: 'noun' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        door: { viet: 'cửa', pos: 'noun' },
+                        is: { viet: 'bị', pos: 'verb' },
+                        broken: { viet: 'hỏng', pos: 'adjective' },
                     },
                 },
                 {
-                    word: "Faucet",
-                    vietnamese: "Vòi nước",
-                    englishDef: "A device controlling the flow of water.",
-                    vietnameseDef: "Thiết bị điều khiển dòng chảy của nước.",
+                    word: 'Socket',
+                    vietnamese: 'Ổ cắm điện',
+                    englishDef: 'A device for connecting electrical plugs.',
+                    vietnameseDef: 'Thiết bị để kết nối phích cắm điện.',
                     clozeSentence:
-                        "The kitchen <span class='word-highlight'>____</span> is <span class='sentence-highlight'>leaking</span>.",
+                        "I plugged the lamp into the <span class='word-highlight'>____</span> on the <span class='sentence-highlight'>wall</span>.",
                     clozeVietnamese:
-                        "<span class='word-highlight'>Vòi nước</span> trong bếp đang <span class='sentence-highlight'>rò rỉ</span>.",
+                        "Tôi cắm đèn vào <span class='word-highlight'>ổ cắm điện</span> trên <span class='sentence-highlight'>tường</span>.",
                     example:
-                        "I turned on the <span class='word-highlight'>faucet</span> to <span class='sentence-highlight'>wash dishes</span>.",
+                        "The <span class='word-highlight'>socket</span> in the <span class='sentence-highlight'>kitchen</span> is loose.",
                     exampleVietnamese:
-                        "Tôi mở <span class='word-highlight'>vòi nước</span> để <span class='sentence-highlight'>rửa bát</span>.",
-                    options: ["Pipe", "Faucet", "Sink", "Pump"],
-                    tip: "Liên tưởng '<span class='word-highlight'>faucet</span>' với 'flow', vì <span class='word-highlight'>vòi nước</span> điều khiển dòng nước.",
+                        "<span class='word-highlight'>Ổ cắm điện</span> trong <span class='sentence-highlight'>bếp</span> bị lỏng.",
+                    options: ['Switch', 'Socket', 'Bulb', 'Wire'],
+                    tip: "Liên kết '<span class='word-highlight'>socket</span>' với 'connect', vì <span class='word-highlight'>ổ cắm điện</span> kết nối điện.",
                     wordMap: {
-                        The: { viet: "", pos: "article" },
-                        kitchen: { viet: "bếp", pos: "noun" },
-                        is: { viet: "đang", pos: "verb" },
-                        leaking: { viet: "rò rỉ", pos: "verb" },
-                        Faucet: { viet: "Vòi nước", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        controlling: { viet: "điều khiển", pos: "verb" },
-                        flow: { viet: "dòng chảy", pos: "noun" },
-                        of: { viet: "của", pos: "preposition" },
-                        water: { viet: "nước", pos: "noun" },
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        turned: { viet: "mở", pos: "verb" },
-                        on: { viet: "", pos: "preposition" },
-                        to: { viet: "để", pos: "preposition" },
-                        wash: { viet: "rửa", pos: "verb" },
-                        dishes: { viet: "bát", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        plugged: { viet: 'cắm', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        lamp: { viet: 'đèn', pos: 'noun' },
+                        into: { viet: 'vào', pos: 'preposition' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        wall: { viet: 'tường', pos: 'noun' },
+                        Socket: { viet: 'Ổ cắm điện', pos: 'noun' },
+                        device: { viet: 'thiết bị', pos: 'noun' },
+                        connecting: { viet: 'kết nối', pos: 'verb' },
+                        electrical: { viet: 'điện', pos: 'adjective' },
+                        plugs: { viet: 'phích cắm', pos: 'noun' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        kitchen: { viet: 'bếp', pos: 'noun' },
+                        is: { viet: 'bị', pos: 'verb' },
+                        loose: { viet: 'lỏng', pos: 'adjective' },
                     },
                 },
                 {
-                    word: "Mailbox",
-                    vietnamese: "Hộp thư",
-                    englishDef: "A box for receiving mail.",
-                    vietnameseDef: "Hộp để nhận thư.",
+                    word: 'Curtain',
+                    vietnamese: 'Rèm cửa',
+                    englishDef: 'A piece of cloth for covering windows.',
+                    vietnameseDef: 'Tấm vải để che cửa sổ.',
                     clozeSentence:
-                        "I checked the <span class='word-highlight'>____</span> for <span class='sentence-highlight'>letters</span>.",
+                        "I closed the <span class='word-highlight'>____</span> to block the <span class='sentence-highlight'>sunlight</span>.",
                     clozeVietnamese:
-                        "Tôi kiểm tra <span class='word-highlight'>hộp thư</span> để lấy <span class='sentence-highlight'>thư</span>.",
+                        "Tôi kéo <span class='word-highlight'>rèm cửa</span> để che <span class='sentence-highlight'>ánh nắng</span>.",
                     example:
-                        "The <span class='word-highlight'>mailbox</span> was full of <span class='sentence-highlight'>bills</span>.",
+                        "The <span class='word-highlight'>curtain</span> in the <span class='sentence-highlight'>bedroom</span> is blue.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Hộp thư</span> đầy <span class='sentence-highlight'>hóa đơn</span>.",
-                    options: ["Mailbox", "Trashcan", "Giftbox", "Cabinet"],
-                    tip: "Nghĩ '<span class='word-highlight'>mailbox</span>' như 'mail' (thư) và 'box' (hộp), vì <span class='word-highlight'>hộp thư</span> chứa thư.",
+                        "<span class='word-highlight'>Rèm cửa</span> trong <span class='sentence-highlight'>phòng ngủ</span> màu xanh.",
+                    options: ['Blanket', 'Curtain', 'Rug', 'Sheet'],
+                    tip: "Liên kết '<span class='word-highlight'>curtain</span>' với 'cover', vì <span class='word-highlight'>rèm cửa</span> che cửa sổ.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        checked: { viet: "kiểm tra", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        for: { viet: "để lấy", pos: "preposition" },
-                        letters: { viet: "thư", pos: "noun" },
-                        Mailbox: { viet: "Hộp thư", pos: "noun" },
-                        box: { viet: "hộp", pos: "noun" },
-                        receiving: { viet: "nhận", pos: "verb" },
-                        mail: { viet: "thư", pos: "noun" },
-                        was: { viet: "đã", pos: "verb" },
-                        full: { viet: "đầy", pos: "adjective" },
-                        of: { viet: "của", pos: "preposition" },
-                        bills: { viet: "hóa đơn", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        closed: { viet: 'kéo', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        to: { viet: 'để', pos: 'preposition' },
+                        block: { viet: 'che', pos: 'verb' },
+                        sunlight: { viet: 'ánh nắng', pos: 'noun' },
+                        Curtain: { viet: 'Rèm cửa', pos: 'noun' },
+                        piece: { viet: 'tấm', pos: 'noun' },
+                        cloth: { viet: 'vải', pos: 'noun' },
+                        covering: { viet: 'che', pos: 'verb' },
+                        windows: { viet: 'cửa sổ', pos: 'noun' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        bedroom: { viet: 'phòng ngủ', pos: 'noun' },
+                        is: { viet: 'là', pos: 'verb' },
+                        blue: { viet: 'xanh', pos: 'adjective' },
                     },
                 },
                 {
-                    word: "Headphones",
-                    vietnamese: "Tai nghe",
-                    englishDef: "A device worn over ears to listen to audio.",
-                    vietnameseDef: "Thiết bị đeo trên tai để nghe âm thanh.",
+                    word: 'Rake',
+                    vietnamese: 'Cào',
+                    englishDef: 'A tool for gathering leaves or debris.',
+                    vietnameseDef: 'Dụng cụ để thu gom lá hoặc mảnh vụn.',
                     clozeSentence:
-                        "I listen to <span class='sentence-highlight'>music</span> with my <span class='word-highlight'>____</span>.",
+                        "I used the <span class='word-highlight'>____</span> to clean the <span class='sentence-highlight'>yard</span>.",
                     clozeVietnamese:
-                        "Tôi nghe <span class='sentence-highlight'>nhạc</span> với <span class='word-highlight'>tai nghe</span>.",
+                        "Tôi dùng <span class='word-highlight'>cào</span> để dọn <span class='sentence-highlight'>sân</span>.",
                     example:
-                        "My new <span class='word-highlight'>headphones</span> have great <span class='sentence-highlight'>sound</span>.",
+                        "The <span class='word-highlight'>rake</span> is in the <span class='sentence-highlight'>shed</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Tai nghe</span> mới của tôi có <span class='sentence-highlight'>âm thanh</span> tuyệt vời.",
-                    options: ["Speaker", "Headphones", "Radio", "Cable"],
-                    tip: "Liên kết '<span class='word-highlight'>headphones</span>' với 'head' (đầu), vì <span class='word-highlight'>tai nghe</span> đeo trên đầu.",
+                        "<span class='word-highlight'>Cào</span> ở trong <span class='sentence-highlight'>nhà kho</span>.",
+                    options: ['Broom', 'Rake', 'Shovel', 'Hoe'],
+                    tip: "Nghĩ '<span class='word-highlight'>rake</span>' như 'gather', vì <span class='word-highlight'>cào</span> gom lá.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        listen: { viet: "nghe", pos: "verb" },
-                        to: { viet: "với", pos: "preposition" },
-                        music: { viet: "nhạc", pos: "noun" },
-                        with: { viet: "với", pos: "preposition" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        Headphones: { viet: "Tai nghe", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        worn: { viet: "đeo", pos: "verb" },
-                        over: { viet: "trên", pos: "preposition" },
-                        ears: { viet: "tai", pos: "noun" },
-                        audio: { viet: "âm thanh", pos: "noun" },
-                        new: { viet: "mới", pos: "adjective" },
-                        have: { viet: "có", pos: "verb" },
-                        great: { viet: "tuyệt vời", pos: "adjective" },
-                        sound: { viet: "âm thanh", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        used: { viet: 'dùng', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        to: { viet: 'để', pos: 'preposition' },
+                        clean: { viet: 'dọn', pos: 'verb' },
+                        yard: { viet: 'sân', pos: 'noun' },
+                        Rake: { viet: 'Cào', pos: 'noun' },
+                        tool: { viet: 'dụng cụ', pos: 'noun' },
+                        gathering: { viet: 'thu gom', pos: 'verb' },
+                        leaves: { viet: 'lá', pos: 'noun' },
+                        debris: { viet: 'mảnh vụn', pos: 'noun' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        shed: { viet: 'nhà kho', pos: 'noun' },
                     },
                 },
                 {
-                    word: "Iron",
-                    vietnamese: "Bàn là",
-                    englishDef: "A device used to press clothes.",
-                    vietnameseDef: "Thiết bị dùng để là quần áo.",
+                    word: 'Mop',
+                    vietnamese: 'Cây lau nhà',
+                    englishDef: 'A tool for cleaning floors with water.',
+                    vietnameseDef: 'Dụng cụ để lau sàn với nước.',
                     clozeSentence:
-                        "I used the <span class='word-highlight'>____</span> to <span class='sentence-highlight'>smooth my shirt</span>.",
+                        "I used the <span class='word-highlight'>____</span> to clean the <span class='sentence-highlight'>kitchen floor</span>.",
                     clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>bàn là</span> để <span class='sentence-highlight'>là phẳng áo</span>.",
+                        "Tôi dùng <span class='word-highlight'>cây lau nhà</span> để lau <span class='sentence-highlight'>sàn bếp</span>.",
                     example:
-                        "The <span class='word-highlight'>iron</span> is too <span class='sentence-highlight'>hot</span> for silk.",
+                        "The <span class='word-highlight'>mop</span> is in the <span class='sentence-highlight'>closet</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Bàn là</span> quá <span class='sentence-highlight'>nóng</span> cho lụa.",
-                    options: ["Washer", "Iron", "Dryer", "Needle"],
-                    tip: "Nghĩ '<span class='word-highlight'>iron</span>' như 'iron out' (làm phẳng), vì <span class='word-highlight'>bàn là</span> làm phẳng quần áo.",
+                        "<span class='word-highlight'>Cây lau nhà</span> ở trong <span class='sentence-highlight'>tủ</span>.",
+                    options: ['Broom', 'Mop', 'Sponge', 'Brush'],
+                    tip: "Nghĩ '<span class='word-highlight'>mop</span>' như 'wipe', vì <span class='word-highlight'>cây lau nhà</span> lau sạch sàn.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        smooth: { viet: "là phẳng", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        shirt: { viet: "áo", pos: "noun" },
-                        Iron: { viet: "Bàn là", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        press: { viet: "là", pos: "verb" },
-                        clothes: { viet: "quần áo", pos: "noun" },
-                        is: { viet: "là", pos: "verb" },
-                        too: { viet: "quá", pos: "adverb" },
-                        hot: { viet: "nóng", pos: "adjective" },
-                        for: { viet: "cho", pos: "preposition" },
-                        silk: { viet: "lụa", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        used: { viet: 'dùng', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        to: { viet: 'để', pos: 'preposition' },
+                        clean: { viet: 'lau', pos: 'verb' },
+                        kitchen: { viet: 'bếp', pos: 'noun' },
+                        floor: { viet: 'sàn', pos: 'noun' },
+                        Mop: { viet: 'Cây lau nhà', pos: 'noun' },
+                        tool: { viet: 'dụng cụ', pos: 'noun' },
+                        cleaning: { viet: 'lau', pos: 'verb' },
+                        floors: { viet: 'sàn', pos: 'noun' },
+                        with: { viet: 'với', pos: 'preposition' },
+                        water: { viet: 'nước', pos: 'noun' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        closet: { viet: 'tủ', pos: 'noun' },
                     },
                 },
                 {
-                    word: "Lawnmower",
-                    vietnamese: "Máy cắt cỏ",
-                    englishDef: "A machine for cutting grass.",
-                    vietnameseDef: "Máy dùng để cắt cỏ.",
+                    word: 'Vacuum',
+                    vietnamese: 'Máy hút bụi',
+                    englishDef: 'A device for cleaning by suction.',
+                    vietnameseDef: 'Thiết bị làm sạch bằng lực hút.',
                     clozeSentence:
-                        "I used the <span class='word-highlight'>____</span> to <span class='sentence-highlight'>trim the lawn</span>.",
+                        "I used the <span class='word-highlight'>____</span> to clean the <span class='sentence-highlight'>carpet</span>.",
                     clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>máy cắt cỏ</span> để <span class='sentence-highlight'>cắt tỉa bãi cỏ</span>.",
+                        "Tôi dùng <span class='word-highlight'>máy hút bụi</span> để làm sạch <span class='sentence-highlight'>thảm</span>.",
                     example:
-                        "The <span class='word-highlight'>lawnmower</span> needs <span class='sentence-highlight'>fuel</span>.",
+                        "The <span class='word-highlight'>vacuum</span> is very <span class='sentence-highlight'>powerful</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Máy cắt cỏ</span> cần <span class='sentence-highlight'>nhiên liệu</span>.",
-                    options: ["Lawnmower", "Harvester", "Rake", "Tiller"],
-                    tip: "Liên kết '<span class='word-highlight'>lawnmower</span>' với 'lawn' (bãi cỏ), vì <span class='word-highlight'>máy cắt cỏ</span> dùng cho cỏ.",
+                        "<span class='word-highlight'>Máy hút bụi</span> rất <span class='sentence-highlight'>mạnh</span>.",
+                    options: ['Mop', 'Vacuum', 'Broom', 'Rake'],
+                    tip: "Liên kết '<span class='word-highlight'>vacuum</span>' với 'suck', vì <span class='word-highlight'>máy hút bụi</span> hút bụi.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        trim: { viet: "cắt tỉa", pos: "verb" },
-                        lawn: { viet: "bãi cỏ", pos: "noun" },
-                        Lawnmower: { viet: "Máy cắt cỏ", pos: "noun" },
-                        machine: { viet: "máy", pos: "noun" },
-                        cutting: { viet: "cắt", pos: "verb" },
-                        grass: { viet: "cỏ", pos: "noun" },
-                        needs: { viet: "cần", pos: "verb" },
-                        fuel: { viet: "nhiên liệu", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        used: { viet: 'dùng', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        to: { viet: 'để', pos: 'preposition' },
+                        clean: { viet: 'làm sạch', pos: 'verb' },
+                        carpet: { viet: 'thảm', pos: 'noun' },
+                        Vacuum: { viet: 'Máy hút bụi', pos: 'noun' },
+                        device: { viet: 'thiết bị', pos: 'noun' },
+                        cleaning: { viet: 'làm sạch', pos: 'verb' },
+                        by: { viet: 'bằng', pos: 'preposition' },
+                        suction: { viet: 'lực hút', pos: 'noun' },
+                        is: { viet: 'là', pos: 'verb' },
+                        very: { viet: 'rất', pos: 'adverb' },
+                        powerful: { viet: 'mạnh', pos: 'adjective' },
                     },
                 },
                 {
-                    word: "Detergent",
-                    vietnamese: "Chất tẩy rửa",
-                    englishDef: "A substance used for cleaning.",
-                    vietnameseDef: "Chất dùng để làm sạch.",
+                    word: 'Fridge',
+                    vietnamese: 'Tủ lạnh',
+                    englishDef: 'A device for keeping food cold.',
+                    vietnameseDef: 'Thiết bị để giữ thức ăn lạnh.',
                     clozeSentence:
-                        "I added <span class='word-highlight'>____</span> to the <span class='sentence-highlight'>washing machine</span>.",
+                        "I put the <span class='sentence-highlight'>milk</span> in the <span class='word-highlight'>____</span>.",
                     clozeVietnamese:
-                        "Tôi thêm <span class='word-highlight'>chất tẩy rửa</span> vào <span class='sentence-highlight'>máy giặt</span>.",
+                        "Tôi để <span class='sentence-highlight'>sữa</span> vào <span class='word-highlight'>tủ lạnh</span>.",
                     example:
-                        "This <span class='word-highlight'>detergent</span> removes <span class='sentence-highlight'>stains</span> well.",
+                        "The <span class='word-highlight'>fridge</span> is full of <span class='sentence-highlight'>vegetables</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Chất tẩy rửa</span> này loại bỏ <span class='sentence-highlight'>vết bẩn</span> tốt.",
-                    options: ["Water", "Soap", "Detergent", "Oil"],
-                    tip: "Nghĩ '<span class='word-highlight'>detergent</span>' như 'deter' (ngăn), vì <span class='word-highlight'>chất tẩy rửa</span> ngăn vết bẩn.",
+                        "<span class='word-highlight'>Tủ lạnh</span> đầy <span class='sentence-highlight'>rau củ</span>.",
+                    options: ['Oven', 'Fridge', 'Microwave', 'Freezer'],
+                    tip: "Liên kết '<span class='word-highlight'>fridge</span>' với 'frost', vì <span class='word-highlight'>tủ lạnh</span> làm lạnh.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        added: { viet: "thêm", pos: "verb" },
-                        to: { viet: "vào", pos: "preposition" },
-                        washing: { viet: "máy giặt", pos: "noun" },
-                        machine: { viet: "", pos: "noun" },
-                        Detergent: { viet: "Chất tẩy rửa", pos: "noun" },
-                        substance: { viet: "chất", pos: "noun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        for: { viet: "để", pos: "preposition" },
-                        cleaning: { viet: "làm sạch", pos: "noun" },
-                        this: { viet: "này", pos: "pronoun" },
-                        removes: { viet: "loại bỏ", pos: "verb" },
-                        stains: { viet: "vết bẩn", pos: "noun" },
-                        well: { viet: "tốt", pos: "adverb" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        put: { viet: 'để', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        milk: { viet: 'sữa', pos: 'noun' },
+                        in: { viet: 'vào', pos: 'preposition' },
+                        Fridge: { viet: 'Tủ lạnh', pos: 'noun' },
+                        device: { viet: 'thiết bị', pos: 'noun' },
+                        keeping: { viet: 'giữ', pos: 'verb' },
+                        food: { viet: 'thức ăn', pos: 'noun' },
+                        cold: { viet: 'lạnh', pos: 'adjective' },
+                        is: { viet: 'là', pos: 'verb' },
+                        full: { viet: 'đầy', pos: 'adjective' },
+                        of: { viet: 'của', pos: 'preposition' },
+                        vegetables: { viet: 'rau củ', pos: 'noun' },
                     },
                 },
                 {
-                    word: "Remote",
-                    vietnamese: "Điều khiển từ xa",
+                    word: 'Oven',
+                    vietnamese: 'Lò nướng',
+                    englishDef: 'A device for baking or roasting food.',
+                    vietnameseDef: 'Thiết bị để nướng hoặc quay thức ăn.',
+                    clozeSentence:
+                        "I baked a <span class='sentence-highlight'>cake</span> in the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi nướng <span class='sentence-highlight'>bánh</span> trong <span class='word-highlight'>lò nướng</span>.",
+                    example:
+                        "The <span class='word-highlight'>oven</span> is very <span class='sentence-highlight'>hot</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Lò nướng</span> rất <span class='sentence-highlight'>nóng</span>.",
+                    options: ['Fridge', 'Oven', 'Microwave', 'Stove'],
+                    tip: "Liên kết '<span class='word-highlight'>oven</span>' với 'bake', vì <span class='word-highlight'>lò nướng</span> dùng để nướng.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        baked: { viet: 'nướng', pos: 'verb' },
+                        a: { viet: '', pos: 'article' },
+                        cake: { viet: 'bánh', pos: 'noun' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        the: { viet: '', pos: 'article' },
+                        Oven: { viet: 'Lò nướng', pos: 'noun' },
+                        device: { viet: 'thiết bị', pos: 'noun' },
+                        baking: { viet: 'nướng', pos: 'verb' },
+                        roasting: { viet: 'quay', pos: 'verb' },
+                        food: { viet: 'thức ăn', pos: 'noun' },
+                        is: { viet: 'là', pos: 'verb' },
+                        very: { viet: 'rất', pos: 'adverb' },
+                        hot: { viet: 'nóng', pos: 'adjective' },
+                    },
+                },
+                {
+                    word: 'Microwave',
+                    vietnamese: 'Lò vi sóng',
+                    englishDef: 'A device for heating food quickly.',
+                    vietnameseDef: 'Thiết bị để hâm nóng thức ăn nhanh chóng.',
+                    clozeSentence:
+                        "I heated my <span class='sentence-highlight'>soup</span> in the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi hâm <span class='sentence-highlight'>súp</span> trong <span class='word-highlight'>lò vi sóng</span>.",
+                    example:
+                        "The <span class='word-highlight'>microwave</span> stopped <span class='sentence-highlight'>working</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Lò vi sóng</span> ngừng <span class='sentence-highlight'>hoạt động</span>.",
+                    options: ['Oven', 'Microwave', 'Fridge', 'Toaster'],
+                    tip: "Liên kết '<span class='word-highlight'>microwave</span>' với 'wave', vì <span class='word-highlight'>lò vi sóng</span> dùng sóng để làm nóng.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        heated: { viet: 'hâm', pos: 'verb' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        soup: { viet: 'súp', pos: 'noun' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        the: { viet: '', pos: 'article' },
+                        Microwave: { viet: 'Lò vi sóng', pos: 'noun' },
+                        device: { viet: 'thiết bị', pos: 'noun' },
+                        heating: { viet: 'hâm nóng', pos: 'verb' },
+                        food: { viet: 'thức ăn', pos: 'noun' },
+                        quickly: { viet: 'nhanh chóng', pos: 'adverb' },
+                        stopped: { viet: 'ngừng', pos: 'verb' },
+                        working: { viet: 'hoạt động', pos: 'verb' },
+                    },
+                },
+                {
+                    word: 'Dishwasher',
+                    vietnamese: 'Máy rửa bát',
+                    englishDef: 'A machine for cleaning dishes.',
+                    vietnameseDef: 'Máy để làm sạch bát đĩa.',
+                    clozeSentence:
+                        "I loaded the <span class='word-highlight'>____</span> with <span class='sentence-highlight'>dirty plates</span>.",
+                    clozeVietnamese:
+                        "Tôi cho <span class='word-highlight'>máy rửa bát</span> đầy <span class='sentence-highlight'>đĩa bẩn</span>.",
+                    example:
+                        "The <span class='word-highlight'>dishwasher</span> saves <span class='sentence-highlight'>time</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Máy rửa bát</span> tiết kiệm <span class='sentence-highlight'>thời gian</span>.",
+                    options: ['Fridge', 'Dishwasher', 'Oven', 'Sink'],
+                    tip: "Liên kết '<span class='word-highlight'>dishwasher</span>' với 'wash', vì <span class='word-highlight'>máy rửa bát</span> rửa bát.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        loaded: { viet: 'cho', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        with: { viet: 'đầy', pos: 'preposition' },
+                        dirty: { viet: 'bẩn', pos: 'adjective' },
+                        plates: { viet: 'đĩa', pos: 'noun' },
+                        Dishwasher: { viet: 'Máy rửa bát', pos: 'noun' },
+                        machine: { viet: 'máy', pos: 'noun' },
+                        cleaning: { viet: 'làm sạch', pos: 'verb' },
+                        dishes: { viet: 'bát đĩa', pos: 'noun' },
+                        saves: { viet: 'tiết kiệm', pos: 'verb' },
+                        time: { viet: 'thời gian', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Sofa',
+                    vietnamese: 'Ghế sofa',
+                    englishDef: 'A long seat for multiple people.',
+                    vietnameseDef: 'Ghế dài cho nhiều người ngồi.',
+                    clozeSentence:
+                        "I sat on the <span class='word-highlight'>____</span> to watch <span class='sentence-highlight'>TV</span>.",
+                    clozeVietnamese:
+                        "Tôi ngồi trên <span class='word-highlight'>ghế sofa</span> để xem <span class='sentence-highlight'>TV</span>.",
+                    example:
+                        "The <span class='word-highlight'>sofa</span> is very <span class='sentence-highlight'>comfortable</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Ghế sofa</span> rất <span class='sentence-highlight'>thoải mái</span>.",
+                    options: ['Chair', 'Sofa', 'Table', 'Bed'],
+                    tip: "Liên kết '<span class='word-highlight'>sofa</span>' với 'soft', vì <span class='word-highlight'>ghế sofa</span> thường êm ái.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        sat: { viet: 'ngồi', pos: 'verb' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        the: { viet: '', pos: 'article' },
+                        to: { viet: 'để', pos: 'preposition' },
+                        watch: { viet: 'xem', pos: 'verb' },
+                        TV: { viet: 'TV', pos: 'noun' },
+                        Sofa: { viet: 'Ghế sofa', pos: 'noun' },
+                        long: { viet: 'dài', pos: 'adjective' },
+                        seat: { viet: 'ghế', pos: 'noun' },
+                        multiple: { viet: 'nhiều', pos: 'adjective' },
+                        people: { viet: 'người', pos: 'noun' },
+                        is: { viet: 'là', pos: 'verb' },
+                        very: { viet: 'rất', pos: 'adverb' },
+                        comfortable: { viet: 'thoải mái', pos: 'adjective' },
+                    },
+                },
+                {
+                    word: 'Shelf',
+                    vietnamese: 'Kệ',
+                    englishDef: 'A flat surface for storing items.',
+                    vietnameseDef: 'Bề mặt phẳng để lưu trữ đồ vật.',
+                    clozeSentence:
+                        "I placed my <span class='sentence-highlight'>books</span> on the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi đặt <span class='sentence-highlight'>sách</span> lên <span class='word-highlight'>kệ</span>.",
+                    example:
+                        "The <span class='word-highlight'>shelf</span> is in the <span class='sentence-highlight'>living room</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Kệ</span> ở trong <span class='sentence-highlight'>phòng khách</span>.",
+                    options: ['Table', 'Shelf', 'Cabinet', 'Desk'],
+                    tip: "Liên kết '<span class='word-highlight'>shelf</span>' với 'store', vì <span class='word-highlight'>kệ</span> dùng để lưu trữ.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        placed: { viet: 'đặt', pos: 'verb' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        books: { viet: 'sách', pos: 'noun' },
+                        on: { viet: 'lên', pos: 'preposition' },
+                        the: { viet: '', pos: 'article' },
+                        Shelf: { viet: 'Kệ', pos: 'noun' },
+                        flat: { viet: 'phẳng', pos: 'adjective' },
+                        surface: { viet: 'bề mặt', pos: 'noun' },
+                        storing: { viet: 'lưu trữ', pos: 'verb' },
+                        items: { viet: 'đồ vật', pos: 'noun' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        living: { viet: 'phòng khách', pos: 'noun' },
+                        room: { viet: '', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Cabinet',
+                    vietnamese: 'Tủ',
+                    englishDef: 'A piece of furniture for storing items.',
+                    vietnameseDef: 'Món đồ nội thất để lưu trữ đồ vật.',
+                    clozeSentence:
+                        "I stored my <span class='sentence-highlight'>dishes</span> in the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi cất <span class='sentence-highlight'>bát đĩa</span> vào <span class='word-highlight'>tủ</span>.",
+                    example:
+                        "The <span class='word-highlight'>cabinet</span> is in the <span class='sentence-highlight'>kitchen</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Tủ</span> ở trong <span class='sentence-highlight'>bếp</span>.",
+                    options: ['Shelf', 'Cabinet', 'Table', 'Fridge'],
+                    tip: "Liên kết '<span class='word-highlight'>cabinet</span>' với 'contain', vì <span class='word-highlight'>tủ</span> chứa đồ.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        stored: { viet: 'cất', pos: 'verb' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        dishes: { viet: 'bát đĩa', pos: 'noun' },
+                        in: { viet: 'vào', pos: 'preposition' },
+                        the: { viet: '', pos: 'article' },
+                        Cabinet: { viet: 'Tủ', pos: 'noun' },
+                        piece: { viet: 'món', pos: 'noun' },
+                        furniture: { viet: 'đồ nội thất', pos: 'noun' },
+                        storing: { viet: 'lưu trữ', pos: 'verb' },
+                        items: { viet: 'đồ vật', pos: 'noun' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        kitchen: { viet: 'bếp', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Bowl',
+                    vietnamese: 'Bát',
+                    englishDef: 'A round container for holding food.',
+                    vietnameseDef: 'Hộp tròn để đựng thức ăn.',
+                    clozeSentence:
+                        "I ate my <span class='sentence-highlight'>cereal</span> from a <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi ăn <span class='sentence-highlight'>ngũ cốc</span> từ <span class='word-highlight'>bát</span>.",
+                    example:
+                        "The <span class='word-highlight'>bowl</span> is on the <span class='sentence-highlight'>table</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Bát</span> ở trên <span class='sentence-highlight'>bàn</span>.",
+                    options: ['Plate', 'Bowl', 'Cup', 'Glass'],
+                    tip: "Nghĩ '<span class='word-highlight'>bowl</span>' như 'hold', vì <span class='word-highlight'>bát</span> đựng thức ăn.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        ate: { viet: 'ăn', pos: 'verb' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        cereal: { viet: 'ngũ cốc', pos: 'noun' },
+                        from: { viet: 'từ', pos: 'preposition' },
+                        a: { viet: '', pos: 'article' },
+                        Bowl: { viet: 'Bát', pos: 'noun' },
+                        round: { viet: 'tròn', pos: 'adjective' },
+                        container: { viet: 'hộp', pos: 'noun' },
+                        holding: { viet: 'đựng', pos: 'verb' },
+                        food: { viet: 'thức ăn', pos: 'noun' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        table: { viet: 'bàn', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Pan',
+                    vietnamese: 'Chảo',
+                    englishDef: 'A flat container for cooking food.',
+                    vietnameseDef: 'Hộp phẳng để nấu thức ăn.',
+                    clozeSentence:
+                        "I cooked <span class='sentence-highlight'>eggs</span> in a <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi nấu <span class='sentence-highlight'>trứng</span> trong <span class='word-highlight'>chảo</span>.",
+                    example:
+                        "The <span class='word-highlight'>pan</span> is on the <span class='sentence-highlight'>stove</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Chảo</span> ở trên <span class='sentence-highlight'>bếp</span>.",
+                    options: ['Pot', 'Pan', 'Plate', 'Bowl'],
+                    tip: "Nghĩ '<span class='word-highlight'>pan</span>' như 'plan', vì <span class='word-highlight'>chảo</span> dùng để nấu theo kế hoạch.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        cooked: { viet: 'nấu', pos: 'verb' },
+                        eggs: { viet: 'trứng', pos: 'noun' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        a: { viet: '', pos: 'article' },
+                        Pan: { viet: 'Chảo', pos: 'noun' },
+                        flat: { viet: 'phẳng', pos: 'adjective' },
+                        container: { viet: 'hộp', pos: 'noun' },
+                        cooking: { viet: 'nấu', pos: 'verb' },
+                        food: { viet: 'thức ăn', pos: 'noun' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        stove: { viet: 'bếp', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Pot',
+                    vietnamese: 'Nồi',
+                    englishDef: 'A deep container for cooking food.',
+                    vietnameseDef: 'Hộp sâu để nấu thức ăn.',
+                    clozeSentence:
+                        "I boiled <span class='sentence-highlight'>soup</span> in a <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi đun <span class='sentence-highlight'>súp</span> trong <span class='word-highlight'>nồi</span>.",
+                    example:
+                        "The <span class='word-highlight'>pot</span> is on the <span class='sentence-highlight'>stove</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Nồi</span> ở trên <span class='sentence-highlight'>bếp</span>.",
+                    options: ['Pan', 'Pot', 'Bowl', 'Cup'],
+                    tip: "Nghĩ '<span class='word-highlight'>pot</span>' như 'hot', vì <span class='word-highlight'>nồi</span> dùng để nấu nóng.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        boiled: { viet: 'đun', pos: 'verb' },
+                        soup: { viet: 'súp', pos: 'noun' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        a: { viet: '', pos: 'article' },
+                        Pot: { viet: 'Nồi', pos: 'noun' },
+                        deep: { viet: 'sâu', pos: 'adjective' },
+                        container: { viet: 'hộp', pos: 'noun' },
+                        cooking: { viet: 'nấu', pos: 'verb' },
+                        food: { viet: 'thức ăn', pos: 'noun' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        stove: { viet: 'bếp', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Stove',
+                    vietnamese: 'Bếp lò',
+                    englishDef: 'A device for cooking food with heat.',
+                    vietnameseDef: 'Thiết bị để nấu thức ăn bằng nhiệt.',
+                    clozeSentence:
+                        "I cooked <span class='sentence-highlight'>dinner</span> on the <span class='word-highlight'>____</span>.",
+                    clozeVietnamese:
+                        "Tôi nấu <span class='sentence-highlight'>bữa tối</span> trên <span class='word-highlight'>bếp lò</span>.",
+                    example:
+                        "The <span class='word-highlight'>stove</span> is in the <span class='sentence-highlight'>kitchen</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Bếp lò</span> ở trong <span class='sentence-highlight'>bếp</span>.",
+                    options: ['Oven', 'Stove', 'Fridge', 'Microwave'],
+                    tip: "Liên kết '<span class='word-highlight'>stove</span>' với 'hot', vì <span class='word-highlight'>bếp lò</span> tạo nhiệt để nấu.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        cooked: { viet: 'nấu', pos: 'verb' },
+                        dinner: { viet: 'bữa tối', pos: 'noun' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        the: { viet: '', pos: 'article' },
+                        Stove: { viet: 'Bếp lò', pos: 'noun' },
+                        device: { viet: 'thiết bị', pos: 'noun' },
+                        cooking: { viet: 'nấu', pos: 'verb' },
+                        food: { viet: 'thức ăn', pos: 'noun' },
+                        with: { viet: 'bằng', pos: 'preposition' },
+                        heat: { viet: 'nhiệt', pos: 'noun' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        kitchen: { viet: 'bếp', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Blanket',
+                    vietnamese: 'Chăn',
+                    englishDef: 'A large piece of cloth for keeping warm.',
+                    vietnameseDef: 'Tấm vải lớn để giữ ấm.',
+                    clozeSentence:
+                        "I covered myself with a <span class='word-highlight'>____</span> during the <span class='sentence-highlight'>cold night</span>.",
+                    clozeVietnamese:
+                        "Tôi đắp <span class='word-highlight'>chăn</span> trong <span class='sentence-highlight'>đêm lạnh</span>.",
+                    example:
+                        "The <span class='word-highlight'>blanket</span> is on the <span class='sentence-highlight'>bed</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Chăn</span> ở trên <span class='sentence-highlight'>giường</span>.",
+                    options: ['Pillow', 'Blanket', 'Sheet', 'Curtain'],
+                    tip: "Liên kết '<span class='word-highlight'>blanket</span>' với 'warm', vì <span class='word-highlight'>chăn</span> giữ ấm.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        covered: { viet: 'đắp', pos: 'verb' },
+                        myself: { viet: 'mình', pos: 'pronoun' },
+                        with: { viet: 'với', pos: 'preposition' },
+                        a: { viet: '', pos: 'article' },
+                        during: { viet: 'trong', pos: 'preposition' },
+                        cold: { viet: 'lạnh', pos: 'adjective' },
+                        night: { viet: 'đêm', pos: 'noun' },
+                        Blanket: { viet: 'Chăn', pos: 'noun' },
+                        large: { viet: 'lớn', pos: 'adjective' },
+                        piece: { viet: 'tấm', pos: 'noun' },
+                        cloth: { viet: 'vải', pos: 'noun' },
+                        keeping: { viet: 'giữ', pos: 'verb' },
+                        warm: { viet: 'ấm', pos: 'adjective' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        bed: { viet: 'giường', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Sheet',
+                    vietnamese: 'Ga giường',
+                    englishDef: 'A large piece of cloth for covering a bed.',
+                    vietnameseDef: 'Tấm vải lớn để phủ giường.',
+                    clozeSentence:
+                        "I changed the <span class='word-highlight'>____</span> on my <span class='sentence-highlight'>bed</span>.",
+                    clozeVietnamese:
+                        "Tôi thay <span class='word-highlight'>ga giường</span> trên <span class='sentence-highlight'>giường</span>.",
+                    example:
+                        "The <span class='word-highlight'>sheet</span> is very <span class='sentence-highlight'>soft</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Ga giường</span> rất <span class='sentence-highlight'>mềm</span>.",
+                    options: ['Blanket', 'Sheet', 'Pillow', 'Curtain'],
+                    tip: "Liên kết '<span class='word-highlight'>sheet</span>' với 'bed', vì <span class='word-highlight'>ga giường</span> dùng cho giường.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        changed: { viet: 'thay', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        bed: { viet: 'giường', pos: 'noun' },
+                        Sheet: { viet: 'Ga giường', pos: 'noun' },
+                        large: { viet: 'lớn', pos: 'adjective' },
+                        piece: { viet: 'tấm', pos: 'noun' },
+                        cloth: { viet: 'vải', pos: 'noun' },
+                        covering: { viet: 'phủ', pos: 'verb' },
+                        is: { viet: 'là', pos: 'verb' },
+                        very: { viet: 'rất', pos: 'adverb' },
+                        soft: { viet: 'mềm', pos: 'adjective' },
+                    },
+                },
+                {
+                    word: 'Mattress',
+                    vietnamese: 'Nệm',
                     englishDef:
-                        "A device to control electronics from a distance.",
-                    vietnameseDef: "Thiết bị điều khiển điện tử từ xa.",
+                        'A thick pad for supporting the body during sleep.',
+                    vietnameseDef: 'Tấm đệm dày để hỗ trợ cơ thể khi ngủ.',
                     clozeSentence:
-                        "I lost the TV <span class='word-highlight'>____</span> on the <span class='sentence-highlight'>couch</span>.",
+                        "I bought a new <span class='word-highlight'>____</span> for my <span class='sentence-highlight'>bed</span>.",
                     clozeVietnamese:
-                        "Tôi làm mất <span class='word-highlight'>điều khiển từ xa</span> của TV trên <span class='sentence-highlight'>ghế sofa</span>.",
+                        "Tôi mua <span class='word-highlight'>nệm</span> mới cho <span class='sentence-highlight'>giường</span>.",
                     example:
-                        "The <span class='word-highlight'>remote</span> controls the <span class='sentence-highlight'>air conditioner</span>.",
+                        "The <span class='word-highlight'>mattress</span> is very <span class='sentence-highlight'>comfortable</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Điều khiển từ xa</span> điều khiển <span class='sentence-highlight'>máy lạnh</span>.",
-                    options: ["Button", "Remote", "Computer", "Phone"],
-                    tip: "Liên tưởng '<span class='word-highlight'>remote</span>' với 'remove' (xa), vì <span class='word-highlight'>điều khiển từ xa</span> dùng từ khoảng cách.",
+                        "<span class='word-highlight'>Nệm</span> rất <span class='sentence-highlight'>thoải mái</span>.",
+                    options: ['Pillow', 'Mattress', 'Blanket', 'Sheet'],
+                    tip: "Liên kết '<span class='word-highlight'>mattress</span>' với 'rest', vì <span class='word-highlight'>nệm</span> giúp nghỉ ngơi.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        lost: { viet: "làm mất", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        TV: { viet: "TV", pos: "noun" },
-                        on: { viet: "trên", pos: "preposition" },
-                        couch: { viet: "ghế sofa", pos: "noun" },
-                        Remote: { viet: "Điều khiển từ xa", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        control: { viet: "điều khiển", pos: "verb" },
-                        electronics: { viet: "điện tử", pos: "noun" },
-                        from: { viet: "từ", pos: "preposition" },
-                        distance: { viet: "xa", pos: "noun" },
-                        controls: { viet: "điều khiển", pos: "verb" },
-                        air: { viet: "máy lạnh", pos: "noun" },
-                        conditioner: { viet: "", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        bought: { viet: 'mua', pos: 'verb' },
+                        a: { viet: '', pos: 'article' },
+                        new: { viet: 'mới', pos: 'adjective' },
+                        for: { viet: 'cho', pos: 'preposition' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        bed: { viet: 'giường', pos: 'noun' },
+                        Mattress: { viet: 'Nệm', pos: 'noun' },
+                        thick: { viet: 'dày', pos: 'adjective' },
+                        pad: { viet: 'đệm', pos: 'noun' },
+                        supporting: { viet: 'hỗ trợ', pos: 'verb' },
+                        body: { viet: 'cơ thể', pos: 'noun' },
+                        during: { viet: 'khi', pos: 'preposition' },
+                        sleep: { viet: 'ngủ', pos: 'noun' },
+                        is: { viet: 'là', pos: 'verb' },
+                        very: { viet: 'rất', pos: 'adverb' },
+                        comfortable: { viet: 'thoải mái', pos: 'adjective' },
                     },
                 },
                 {
-                    word: "Scissors",
-                    vietnamese: "Cái kéo",
-                    englishDef: "A tool with blades for cutting.",
-                    vietnameseDef: "Dụng cụ có lưỡi để cắt.",
+                    word: 'Wardrobe',
+                    vietnamese: 'Tủ quần áo',
+                    englishDef: 'A piece of furniture for storing clothes.',
+                    vietnameseDef: 'Món đồ nội thất để cất quần áo.',
                     clozeSentence:
-                        "I used <span class='word-highlight'>____</span> to cut the <span class='sentence-highlight'>paper</span>.",
+                        "I hung my <span class='sentence-highlight'>jacket</span> in the <span class='word-highlight'>____</span>.",
                     clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>cái kéo</span> để cắt <span class='sentence-highlight'>giấy</span>.",
+                        "Tôi treo <span class='sentence-highlight'>áo khoác</span> trong <span class='word-highlight'>tủ quần áo</span>.",
                     example:
-                        "These <span class='word-highlight'>scissors</span> are very <span class='sentence-highlight'>sharp</span>.",
+                        "The <span class='word-highlight'>wardrobe</span> is full of <span class='sentence-highlight'>clothes</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Cái kéo</span> này rất <span class='sentence-highlight'>sắc</span>.",
-                    options: ["Scissors", "Knife", "Pen", "Ruler"],
-                    tip: "Nghĩ '<span class='word-highlight'>scissors</span>' như 'slice', vì <span class='word-highlight'>cái kéo</span> dùng để cắt.",
+                        "<span class='word-highlight'>Tủ quần áo</span> đầy <span class='sentence-highlight'>quần áo</span>.",
+                    options: ['Cabinet', 'Wardrobe', 'Shelf', 'Hanger'],
+                    tip: "Liên kết '<span class='word-highlight'>wardrobe</span>' với 'wear', vì <span class='word-highlight'>tủ quần áo</span> chứa đồ mặc.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        to: { viet: "để", pos: "preposition" },
-                        cut: { viet: "cắt", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        paper: { viet: "giấy", pos: "noun" },
-                        Scissors: { viet: "Cái kéo", pos: "noun" },
-                        tool: { viet: "dụng cụ", pos: "noun" },
-                        with: { viet: "có", pos: "preposition" },
-                        blades: { viet: "lưỡi", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        cutting: { viet: "cắt", pos: "verb" },
-                        these: { viet: "này", pos: "pronoun" },
-                        are: { viet: "là", pos: "verb" },
-                        very: { viet: "rất", pos: "adverb" },
-                        sharp: { viet: "sắc", pos: "adjective" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        hung: { viet: 'treo', pos: 'verb' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        jacket: { viet: 'áo khoác', pos: 'noun' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        the: { viet: '', pos: 'article' },
+                        Wardrobe: { viet: 'Tủ quần áo', pos: 'noun' },
+                        piece: { viet: 'món', pos: 'noun' },
+                        furniture: { viet: 'đồ nội thất', pos: 'noun' },
+                        storing: { viet: 'cất', pos: 'verb' },
+                        clothes: { viet: 'quần áo', pos: 'noun' },
+                        is: { viet: 'là', pos: 'verb' },
+                        full: { viet: 'đầy', pos: 'adjective' },
+                        of: { viet: 'của', pos: 'preposition' },
                     },
                 },
                 {
-                    word: "Thermostat",
-                    vietnamese: "Bộ điều nhiệt",
-                    englishDef: "A device controlling temperature.",
-                    vietnameseDef: "Thiết bị điều khiển nhiệt độ.",
-                    clozeSentence:
-                        "I adjusted the <span class='word-highlight'>____</span> to <span class='sentence-highlight'>cool the room</span>.",
-                    clozeVietnamese:
-                        "Tôi điều chỉnh <span class='word-highlight'>bộ điều nhiệt</span> để <span class='sentence-highlight'>làm mát phòng</span>.",
-                    example:
-                        "The <span class='word-highlight'>thermostat</span> keeps the <span class='sentence-highlight'>house warm</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Bộ điều nhiệt</span> giữ <span class='sentence-highlight'>nhà ấm</span>.",
-                    options: ["Airconditioner", "Thermostat", "Fan", "Heater"],
-                    tip: "Liên kết '<span class='word-highlight'>thermostat</span>' với 'thermal' (nhiệt), vì <span class='word-highlight'>bộ điều nhiệt</span> điều chỉnh nhiệt độ.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        adjusted: { viet: "điều chỉnh", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        cool: { viet: "làm mát", pos: "verb" },
-                        room: { viet: "phòng", pos: "noun" },
-                        Thermostat: { viet: "Bộ điều nhiệt", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        controlling: { viet: "điều khiển", pos: "verb" },
-                        temperature: { viet: "nhiệt độ", pos: "noun" },
-                        keeps: { viet: "giữ", pos: "verb" },
-                        house: { viet: "nhà", pos: "noun" },
-                        warm: { viet: "ấm", pos: "adjective" },
-                    },
-                },
-                {
-                    word: "Blender",
-                    vietnamese: "Máy xay",
-                    englishDef: "A machine for mixing or pureeing food.",
-                    vietnameseDef: "Máy dùng để trộn hoặc nghiền thức ăn.",
-                    clozeSentence:
-                        "I made a <span class='sentence-highlight'>smoothie</span> with the <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi làm <span class='sentence-highlight'>sinh tố</span> với <span class='word-highlight'>máy xay</span>.",
-                    example:
-                        "The <span class='word-highlight'>blender</span> is great for <span class='sentence-highlight'>soups</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Máy xay</span> tuyệt vời cho <span class='sentence-highlight'>súp</span>.",
-                    options: ["Blender", "Oven", "Juicer", "Pot"],
-                    tip: "Nghĩ '<span class='word-highlight'>blender</span>' như 'blend' (trộn), vì <span class='word-highlight'>máy xay</span> trộn thức ăn.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        made: { viet: "làm", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        smoothie: { viet: "sinh tố", pos: "noun" },
-                        with: { viet: "với", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        Blender: { viet: "Máy xay", pos: "noun" },
-                        machine: { viet: "máy", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        mixing: { viet: "trộn", pos: "verb" },
-                        pureeing: { viet: "nghiền", pos: "verb" },
-                        food: { viet: "thức ăn", pos: "noun" },
-                        is: { viet: "là", pos: "verb" },
-                        great: { viet: "tuyệt vời", pos: "adjective" },
-                        soups: { viet: "súp", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Toaster",
-                    vietnamese: "Máy nướng bánh",
-                    englishDef: "A device for toasting bread.",
-                    vietnameseDef: "Thiết bị để nướng bánh mì.",
-                    clozeSentence:
-                        "I used the <span class='word-highlight'>____</span> to make <span class='sentence-highlight'>toast</span>.",
-                    clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>máy nướng bánh</span> để làm <span class='sentence-highlight'>bánh mì nướng</span>.",
-                    example:
-                        "The <span class='word-highlight'>toaster</span> burned my <span class='sentence-highlight'>bread</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Máy nướng bánh</span> làm cháy <span class='sentence-highlight'>bánh mì</span> của tôi.",
-                    options: ["Microwave", "Toaster", "Blender", "Fryer"],
-                    tip: "Liên kết '<span class='word-highlight'>toaster</span>' với 'toast' (nướng), vì <span class='word-highlight'>máy nướng bánh</span> nướng bánh mì.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        make: { viet: "làm", pos: "verb" },
-                        toast: { viet: "bánh mì nướng", pos: "noun" },
-                        Toaster: { viet: "Máy nướng bánh", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        toasting: { viet: "nướng", pos: "verb" },
-                        bread: { viet: "bánh mì", pos: "noun" },
-                        burned: { viet: "làm cháy", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                    },
-                },
-                {
-                    word: "Flashlight",
-                    vietnamese: "Đèn pin",
-                    englishDef: "A portable light powered by batteries.",
-                    vietnameseDef: "Đèn cầm tay chạy bằng pin.",
-                    clozeSentence:
-                        "I used a <span class='word-highlight'>____</span> during the <span class='sentence-highlight'>power outage</span>.",
-                    clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>đèn pin</span> trong lúc <span class='sentence-highlight'>mất điện</span>.",
-                    example:
-                        "The <span class='word-highlight'>flashlight</span> helped me find my <span class='sentence-highlight'>keys</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Đèn pin</span> giúp tôi tìm <span class='sentence-highlight'>chìa khóa</span>.",
-                    options: [
-                        "Flashlight",
-                        "Desklight",
-                        "Nightlight",
-                        "Streetlight",
-                    ],
-                    tip: "Nghĩ '<span class='word-highlight'>flashlight</span>' như 'flash' (ánh sáng), vì <span class='word-highlight'>đèn pin</span> tạo ánh sáng.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        during: { viet: "trong lúc", pos: "preposition" },
-                        power: { viet: "mất điện", pos: "noun" },
-                        outage: { viet: "", pos: "noun" },
-                        Flashlight: { viet: "Đèn pin", pos: "noun" },
-                        portable: { viet: "cầm tay", pos: "adjective" },
-                        light: { viet: "đèn", pos: "noun" },
-                        powered: { viet: "chạy", pos: "verb" },
-                        by: { viet: "bằng", pos: "preposition" },
-                        batteries: { viet: "pin", pos: "noun" },
-                        helped: { viet: "giúp", pos: "verb" },
-                        me: { viet: "tôi", pos: "pronoun" },
-                        find: { viet: "tìm", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        keys: { viet: "chìa khóa", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Calendar",
-                    vietnamese: "Lịch",
-                    englishDef: "A chart showing days and months.",
-                    vietnameseDef: "Biểu đồ hiển thị ngày và tháng.",
-                    clozeSentence:
-                        "I marked my <span class='sentence-highlight'>birthday</span> on the <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi đánh dấu <span class='sentence-highlight'>sinh nhật</span> trên <span class='word-highlight'>lịch</span>.",
-                    example:
-                        "The <span class='word-highlight'>calendar</span> shows <span class='sentence-highlight'>holidays</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Lịch</span> hiển thị <span class='sentence-highlight'>ngày lễ</span>.",
-                    options: ["Notebook", "Calendar", "Clock", "Map"],
-                    tip: "Liên kết '<span class='word-highlight'>calendar</span>' với 'count', vì <span class='word-highlight'>lịch</span> đếm ngày.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        marked: { viet: "đánh dấu", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        birthday: { viet: "sinh nhật", pos: "noun" },
-                        on: { viet: "trên", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        Calendar: { viet: "Lịch", pos: "noun" },
-                        chart: { viet: "biểu đồ", pos: "noun" },
-                        showing: { viet: "hiển thị", pos: "verb" },
-                        days: { viet: "ngày", pos: "noun" },
-                        and: { viet: "và", pos: "conjunction" },
-                        months: { viet: "tháng", pos: "noun" },
-                        shows: { viet: "hiển thị", pos: "verb" },
-                        holidays: { viet: "ngày lễ", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Notebook",
-                    vietnamese: "Sổ tay",
-                    englishDef: "A book for writing notes.",
-                    vietnameseDef: "Sách để ghi chú.",
-                    clozeSentence:
-                        "I wrote my <span class='sentence-highlight'>ideas</span> in a <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi ghi <span class='sentence-highlight'>ý tưởng</span> vào <span class='word-highlight'>sổ tay</span>.",
-                    example:
-                        "My <span class='word-highlight'>notebook</span> is full of <span class='sentence-highlight'>sketches</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Sổ tay</span> của tôi đầy <span class='sentence-highlight'>bản phác thảo</span>.",
-                    options: ["Notebook", "Book", "Magazine", "Newspaper"],
-                    tip: "Nghĩ '<span class='word-highlight'>notebook</span>' như 'note' (ghi chú), vì <span class='word-highlight'>sổ tay</span> dùng để ghi.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        wrote: { viet: "ghi", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        ideas: { viet: "ý tưởng", pos: "noun" },
-                        in: { viet: "vào", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        Notebook: { viet: "Sổ tay", pos: "noun" },
-                        book: { viet: "sách", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        writing: { viet: "ghi", pos: "verb" },
-                        notes: { viet: "ghi chú", pos: "noun" },
-                        is: { viet: "là", pos: "verb" },
-                        full: { viet: "đầy", pos: "adjective" },
-                        of: { viet: "của", pos: "preposition" },
-                        sketches: { viet: "bản phác thảo", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Sunscreen",
-                    vietnamese: "Kem chống nắng",
-                    englishDef: "A cream protecting skin from sunlight.",
-                    vietnameseDef: "Kem bảo vệ da khỏi ánh nắng.",
-                    clozeSentence:
-                        "I applied <span class='word-highlight'>____</span> before going to the <span class='sentence-highlight'>beach</span>.",
-                    clozeVietnamese:
-                        "Tôi thoa <span class='word-highlight'>kem chống nắng</span> trước khi đi <span class='sentence-highlight'>biển</span>.",
-                    example:
-                        "<span class='word-highlight'>Sunscreen</span> prevents <span class='sentence-highlight'>sunburn</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Kem chống nắng</span> ngăn <span class='sentence-highlight'>cháy nắng</span>.",
-                    options: ["Lotion", "Sunscreen", "Soap", "Shampoo"],
-                    tip: "Liên kết '<span class='word-highlight'>sunscreen</span>' với 'sun' (mặt trời), vì <span class='word-highlight'>kem chống nắng</span> bảo vệ khỏi nắng.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        applied: { viet: "thoa", pos: "verb" },
-                        before: { viet: "trước khi", pos: "preposition" },
-                        going: { viet: "đi", pos: "verb" },
-                        to: { viet: "đến", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        beach: { viet: "biển", pos: "noun" },
-                        Sunscreen: { viet: "Kem chống nắng", pos: "noun" },
-                        cream: { viet: "kem", pos: "noun" },
-                        protecting: { viet: "bảo vệ", pos: "verb" },
-                        skin: { viet: "da", pos: "noun" },
-                        from: { viet: "khỏi", pos: "preposition" },
-                        sunlight: { viet: "ánh nắng", pos: "noun" },
-                        prevents: { viet: "ngăn", pos: "verb" },
-                        sunburn: { viet: "cháy nắng", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Trashcan",
-                    vietnamese: "Thùng rác",
-                    englishDef: "A container for waste.",
-                    vietnameseDef: "Hộp đựng rác.",
-                    clozeSentence:
-                        "I threw the <span class='sentence-highlight'>wrapper</span> in the <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi vứt <span class='sentence-highlight'>vỏ bọc</span> vào <span class='word-highlight'>thùng rác</span>.",
-                    example:
-                        "The <span class='word-highlight'>trashcan</span> is <span class='sentence-highlight'>full</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Thùng rác</span> đã <span class='sentence-highlight'>đầy</span>.",
-                    options: ["Mailbox", "Trashcan", "Cabinet", "Giftbox"],
-                    tip: "Nghĩ '<span class='word-highlight'>trashcan</span>' như 'trash' (rác), vì <span class='word-highlight'>thùng rác</span> chứa rác.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        threw: { viet: "vứt", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        wrapper: { viet: "vỏ bọc", pos: "noun" },
-                        in: { viet: "vào", pos: "preposition" },
-                        Trashcan: { viet: "Thùng rác", pos: "noun" },
-                        container: { viet: "hộp", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        waste: { viet: "rác", pos: "noun" },
-                        is: { viet: "đã", pos: "verb" },
-                        full: { viet: "đầy", pos: "adjective" },
-                    },
-                },
-                {
-                    word: "Wallet",
-                    vietnamese: "Ví tiền",
-                    englishDef: "A small case for holding money and cards.",
-                    vietnameseDef: "Hộp nhỏ để đựng tiền và thẻ.",
-                    clozeSentence:
-                        "I forgot my <span class='word-highlight'>____</span> at <span class='sentence-highlight'>home</span>.",
-                    clozeVietnamese:
-                        "Tôi quên <span class='word-highlight'>ví tiền</span> ở <span class='sentence-highlight'>nhà</span>.",
-                    example:
-                        "My <span class='word-highlight'>wallet</span> has my <span class='sentence-highlight'>ID card</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Ví tiền</span> của tôi có <span class='sentence-highlight'>thẻ căn cước</span>.",
-                    options: ["Backpack", "Handbag", "Wallet", "Box"],
-                    tip: "Liên tưởng '<span class='word-highlight'>wallet</span>' với 'wealth' (giàu), vì <span class='word-highlight'>ví tiền</span> chứa tiền.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        forgot: { viet: "quên", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        at: { viet: "ở", pos: "preposition" },
-                        home: { viet: "nhà", pos: "noun" },
-                        Wallet: { viet: "Ví tiền", pos: "noun" },
-                        small: { viet: "nhỏ", pos: "adjective" },
-                        case: { viet: "hộp", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        holding: { viet: "đựng", pos: "verb" },
-                        money: { viet: "tiền", pos: "noun" },
-                        and: { viet: "và", pos: "conjunction" },
-                        cards: { viet: "thẻ", pos: "noun" },
-                        has: { viet: "có", pos: "verb" },
-                        ID: { viet: "thẻ căn cước", pos: "noun" },
-                        card: { viet: "", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Sunglasses",
-                    vietnamese: "Kính râm",
-                    englishDef: "Glasses protecting eyes from sunlight.",
-                    vietnameseDef: "Kính bảo vệ mắt khỏi ánh nắng.",
-                    clozeSentence:
-                        "I wore <span class='word-highlight'>____</span> on the <span class='sentence-highlight'>sunny day</span>.",
-                    clozeVietnamese:
-                        "Tôi đeo <span class='word-highlight'>kính râm</span> vào <span class='sentence-highlight'>ngày nắng</span>.",
-                    example:
-                        "My <span class='word-highlight'>sunglasses</span> are very <span class='sentence-highlight'>stylish</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Kính râm</span> của tôi rất <span class='sentence-highlight'>thời trang</span>.",
-                    options: [
-                        "Readingglasses",
-                        "Sunglasses",
-                        "Microscope",
-                        "Glasses",
-                    ],
-                    tip: "Liên kết '<span class='word-highlight'>sunglasses</span>' với 'sun', vì <span class='word-highlight'>kính râm</span> bảo vệ khỏi nắng.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        wore: { viet: "đeo", pos: "verb" },
-                        on: { viet: "vào", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        sunny: { viet: "nắng", pos: "adjective" },
-                        day: { viet: "ngày", pos: "noun" },
-                        Sunglasses: { viet: "Kính râm", pos: "noun" },
-                        glasses: { viet: "kính", pos: "noun" },
-                        protecting: { viet: "bảo vệ", pos: "verb" },
-                        eyes: { viet: "mắt", pos: "noun" },
-                        from: { viet: "khỏi", pos: "preposition" },
-                        sunlight: { viet: "ánh nắng", pos: "noun" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        are: { viet: "là", pos: "verb" },
-                        very: { viet: "rất", pos: "adverb" },
-                        stylish: { viet: "thời trang", pos: "adjective" },
-                    },
-                },
-                {
-                    word: "Bicycle",
-                    vietnamese: "Xe đạp",
-                    englishDef:
-                        "A vehicle with two wheels powered by pedaling.",
-                    vietnameseDef: "Phương tiện hai bánh chạy bằng đạp.",
-                    clozeSentence:
-                        "I rode my <span class='word-highlight'>____</span> to the <span class='sentence-highlight'>park</span>.",
-                    clozeVietnamese:
-                        "Tôi đạp <span class='word-highlight'>xe đạp</span> đến <span class='sentence-highlight'>công viên</span>.",
-                    example:
-                        "The <span class='word-highlight'>bicycle</span> has a new <span class='sentence-highlight'>tire</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Xe đạp</span> có <span class='sentence-highlight'>lốp</span> mới.",
-                    options: ["Motorcycle", "Bicycle", "Car", "Bus"],
-                    tip: "Nghĩ '<span class='word-highlight'>bicycle</span>' như 'bi' (hai), vì <span class='word-highlight'>xe đạp</span> có hai bánh.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        rode: { viet: "đạp", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        to: { viet: "đến", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        park: { viet: "công viên", pos: "noun" },
-                        Bicycle: { viet: "Xe đạp", pos: "noun" },
-                        vehicle: { viet: "phương tiện", pos: "noun" },
-                        with: { viet: "với", pos: "preposition" },
-                        two: { viet: "hai", pos: "number" },
-                        wheels: { viet: "bánh", pos: "noun" },
-                        powered: { viet: "chạy", pos: "verb" },
-                        by: { viet: "bằng", pos: "preposition" },
-                        pedaling: { viet: "đạp", pos: "verb" },
-                        has: { viet: "có", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        new: { viet: "mới", pos: "adjective" },
-                        tire: { viet: "lốp", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Lipstick",
-                    vietnamese: "Son môi",
-                    englishDef: "A cosmetic for coloring lips.",
-                    vietnameseDef: "Mỹ phẩm để tô màu môi.",
-                    clozeSentence:
-                        "She applied <span class='word-highlight'>____</span> before the <span class='sentence-highlight'>party</span>.",
-                    clozeVietnamese:
-                        "Cô ấy thoa <span class='word-highlight'>son môi</span> trước <span class='sentence-highlight'>bữa tiệc</span>.",
-                    example:
-                        "Her red <span class='word-highlight'>lipstick</span> looks <span class='sentence-highlight'>great</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Son môi</span> đỏ của cô ấy trông <span class='sentence-highlight'>tuyệt</span>.",
-                    options: ["Lipstick", "Foundation", "Blush", "Eyeliner"],
-                    tip: "Liên kết '<span class='word-highlight'>lipstick</span>' với 'lip' (môi), vì <span class='word-highlight'>son môi</span> dùng cho môi.",
-                    wordMap: {
-                        She: { viet: "Cô ấy", pos: "pronoun" },
-                        applied: { viet: "thoa", pos: "verb" },
-                        before: { viet: "trước", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        party: { viet: "bữa tiệc", pos: "noun" },
-                        Lipstick: { viet: "Son môi", pos: "noun" },
-                        cosmetic: { viet: "mỹ phẩm", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        coloring: { viet: "tô màu", pos: "verb" },
-                        lips: { viet: "môi", pos: "noun" },
-                        her: { viet: "của cô ấy", pos: "pronoun" },
-                        red: { viet: "đỏ", pos: "adjective" },
-                        looks: { viet: "trông", pos: "verb" },
-                        great: { viet: "tuyệt", pos: "adjective" },
-                    },
-                },
-                {
-                    word: "Comb",
-                    vietnamese: "Lược",
-                    englishDef: "A tool for grooming hair.",
-                    vietnameseDef: "Dụng cụ để chải tóc.",
-                    clozeSentence:
-                        "I used a <span class='word-highlight'>____</span> to <span class='sentence-highlight'>style my hair</span>.",
-                    clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>lược</span> để <span class='sentence-highlight'>tạo kiểu tóc</span>.",
-                    example:
-                        "The <span class='word-highlight'>comb</span> is in my <span class='sentence-highlight'>bag</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Lược</span> ở trong <span class='sentence-highlight'>túi</span> của tôi.",
-                    options: ["Brush", "Comb", "Scissors", "Dryer"],
-                    tip: "Nghĩ '<span class='word-highlight'>comb</span>' như 'calm', vì <span class='word-highlight'>lược</span> làm tóc gọn gàng.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        style: { viet: "tạo kiểu", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        hair: { viet: "tóc", pos: "noun" },
-                        Comb: { viet: "Lược", pos: "noun" },
-                        tool: { viet: "dụng cụ", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        grooming: { viet: "chải", pos: "verb" },
-                        is: { viet: "ở", pos: "verb" },
-                        in: { viet: "trong", pos: "preposition" },
-                        bag: { viet: "túi", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Rug",
-                    vietnamese: "Thảm",
-                    englishDef: "A floor covering made of thick material.",
-                    vietnameseDef: "Tấm phủ sàn làm từ vật liệu dày.",
-                    clozeSentence:
-                        "The <span class='word-highlight'>____</span> in the <span class='sentence-highlight'>living room</span> is soft.",
-                    clozeVietnamese:
-                        "<span class='word-highlight'>Thảm</span> trong <span class='sentence-highlight'>phòng khách</span> rất mềm.",
-                    example:
-                        "I vacuumed the <span class='word-highlight'>rug</span> <span class='sentence-highlight'>yesterday</span>.",
-                    exampleVietnamese:
-                        "Tôi hút bụi <span class='word-highlight'>thảm</span> <span class='sentence-highlight'>hôm qua</span>.",
-                    options: ["Curtain", "Rug", "Chair", "Table"],
-                    tip: "Liên tưởng '<span class='word-highlight'>rug</span>' với 'rough' (thô), vì <span class='word-highlight'>thảm</span> thường dày.",
-                    wordMap: {
-                        The: { viet: "", pos: "article" },
-                        in: { viet: "trong", pos: "preposition" },
-                        living: { viet: "phòng khách", pos: "noun" },
-                        room: { viet: "", pos: "noun" },
-                        is: { viet: "là", pos: "verb" },
-                        soft: { viet: "mềm", pos: "adjective" },
-                        Rug: { viet: "Thảm", pos: "noun" },
-                        floor: { viet: "sàn", pos: "noun" },
-                        covering: { viet: "phủ", pos: "noun" },
-                        made: { viet: "làm", pos: "verb" },
-                        of: { viet: "từ", pos: "preposition" },
-                        thick: { viet: "dày", pos: "adjective" },
-                        material: { viet: "vật liệu", pos: "noun" },
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        vacuumed: { viet: "hút bụi", pos: "verb" },
-                        yesterday: { viet: "hôm qua", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Hanger",
-                    vietnamese: "Móc áo",
-                    englishDef: "A device for hanging clothes.",
-                    vietnameseDef: "Thiết bị để treo quần áo.",
-                    clozeSentence:
-                        "I put my <span class='sentence-highlight'>jacket</span> on a <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi treo <span class='sentence-highlight'>áo khoác</span> lên <span class='word-highlight'>móc áo</span>.",
-                    example:
-                        "The <span class='word-highlight'>hanger</span> broke under the <span class='sentence-highlight'>weight</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Móc áo</span> gãy vì <span class='sentence-highlight'>trọng lượng</span>.",
-                    options: ["Wardrobe", "Hanger", "Shelf", "Box"],
-                    tip: "Nghĩ '<span class='word-highlight'>hanger</span>' như 'hang' (treo), vì <span class='word-highlight'>móc áo</span> dùng để treo.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        put: { viet: "treo", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        jacket: { viet: "áo khoác", pos: "noun" },
-                        on: { viet: "lên", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        Hanger: { viet: "Móc áo", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        hanging: { viet: "treo", pos: "verb" },
-                        clothes: { viet: "quần áo", pos: "noun" },
-                        the: { viet: "", pos: "article" },
-                        broke: { viet: "gãy", pos: "verb" },
-                        under: { viet: "vì", pos: "preposition" },
-                        weight: { viet: "trọng lượng", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Sponge",
-                    vietnamese: "Miếng bọt biển",
-                    englishDef:
-                        "A porous tool for cleaning or absorbing liquid.",
-                    vietnameseDef:
-                        "Dụng cụ xốp để làm sạch hoặc thấm chất lỏng.",
-                    clozeSentence:
-                        "I cleaned the <span class='sentence-highlight'>dishes</span> with a <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi rửa <span class='sentence-highlight'>bát</span> với <span class='word-highlight'>miếng bọt biển</span>.",
-                    example:
-                        "The <span class='word-highlight'>sponge</span> soaked up the <span class='sentence-highlight'>water</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Miếng bọt biển</span> thấm <span class='sentence-highlight'>nước</span>.",
-                    options: ["Cloth", "Sponge", "Brush", "Rag"],
-                    tip: "Liên kết '<span class='word-highlight'>sponge</span>' với 'soak', vì <span class='word-highlight'>miếng bọt biển</span> thấm nước.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        cleaned: { viet: "rửa", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        dishes: { viet: "bát", pos: "noun" },
-                        with: { viet: "với", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        Sponge: { viet: "Miếng bọt biển", pos: "noun" },
-                        porous: { viet: "xốp", pos: "adjective" },
-                        tool: { viet: "dụng cụ", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        cleaning: { viet: "làm sạch", pos: "verb" },
-                        absorbing: { viet: "thấm", pos: "verb" },
-                        liquid: { viet: "chất lỏng", pos: "noun" },
-                        soaked: { viet: "thấm", pos: "verb" },
-                        up: { viet: "", pos: "adverb" },
-                        water: { viet: "nước", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Napkin",
-                    vietnamese: "Khăn giấy",
-                    englishDef:
-                        "A piece of cloth or paper for wiping mouth or hands.",
-                    vietnameseDef: "Tấm vải hoặc giấy để lau miệng hoặc tay.",
-                    clozeSentence:
-                        "I used a <span class='word-highlight'>____</span> during <span class='sentence-highlight'>dinner</span>.",
-                    clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>khăn giấy</span> trong <span class='sentence-highlight'>bữa tối</span>.",
-                    example:
-                        "The <span class='word-highlight'>napkin</span> fell on the <span class='sentence-highlight'>floor</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Khăn giấy</span> rơi xuống <span class='sentence-highlight'>sàn</span>.",
-                    options: ["Napkin", "Towel", "Mat", "Curtain"],
-                    tip: "Nghĩ '<span class='word-highlight'>napkin</span>' như 'wipe', vì <span class='word-highlight'>khăn giấy</span> dùng để lau.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        during: { viet: "trong", pos: "preposition" },
-                        dinner: { viet: "bữa tối", pos: "noun" },
-                        Napkin: { viet: "Khăn giấy", pos: "noun" },
-                        piece: { viet: "tấm", pos: "noun" },
-                        of: { viet: "của", pos: "preposition" },
-                        cloth: { viet: "vải", pos: "noun" },
-                        or: { viet: "hoặc", pos: "conjunction" },
-                        paper: { viet: "giấy", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        wiping: { viet: "lau", pos: "verb" },
-                        mouth: { viet: "miệng", pos: "noun" },
-                        hands: { viet: "tay", pos: "noun" },
-                        the: { viet: "", pos: "article" },
-                        fell: { viet: "rơi", pos: "verb" },
-                        on: { viet: "xuống", pos: "preposition" },
-                        floor: { viet: "sàn", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Ladder",
-                    vietnamese: "Thang",
-                    englishDef: "A structure for climbing up or down.",
-                    vietnameseDef: "Cấu trúc để leo lên hoặc xuống.",
-                    clozeSentence:
-                        "I used a <span class='word-highlight'>____</span> to reach the <span class='sentence-highlight'>roof</span>.",
-                    clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>thang</span> để lên <span class='sentence-highlight'>mái nhà</span>.",
-                    example:
-                        "The <span class='word-highlight'>ladder</span> is in the <span class='sentence-highlight'>garage</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Thang</span> ở trong <span class='sentence-highlight'>nhà để xe</span>.",
-                    options: ["Ladder", "Staircase", "Chair", "Shelf"],
-                    tip: "Liên kết '<span class='word-highlight'>ladder</span>' với 'lead' (dẫn), vì <span class='word-highlight'>thang</span> dẫn bạn lên cao.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        reach: { viet: "lên", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        roof: { viet: "mái nhà", pos: "noun" },
-                        Ladder: { viet: "Thang", pos: "noun" },
-                        structure: { viet: "cấu trúc", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        climbing: { viet: "leo", pos: "verb" },
-                        up: { viet: "lên", pos: "adverb" },
-                        or: { viet: "hoặc", pos: "conjunction" },
-                        down: { viet: "xuống", pos: "adverb" },
-                        is: { viet: "ở", pos: "verb" },
-                        in: { viet: "trong", pos: "preposition" },
-                        garage: { viet: "nhà để xe", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Candle",
-                    vietnamese: "Nến",
-                    englishDef: "A stick of wax with a wick for lighting.",
-                    vietnameseDef: "Thanh sáp có bấc để thắp sáng.",
-                    clozeSentence:
-                        "I lit a <span class='word-highlight'>____</span> during the <span class='sentence-highlight'>power outage</span>.",
-                    clozeVietnamese:
-                        "Tôi thắp <span class='word-highlight'>nến</span> trong lúc <span class='sentence-highlight'>mất điện</span>.",
-                    example:
-                        "The <span class='word-highlight'>candle</span> smells like <span class='sentence-highlight'>vanilla</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Nến</span> có mùi <span class='sentence-highlight'>vani</span>.",
-                    options: ["Lamp", "Candle", "Fire", "Oil"],
-                    tip: "Nghĩ '<span class='word-highlight'>candle</span>' như 'kindle' (châm), vì <span class='word-highlight'>nến</span> được châm sáng.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        lit: { viet: "thắp", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        during: { viet: "trong lúc", pos: "preposition" },
-                        power: { viet: "mất điện", pos: "noun" },
-                        outage: { viet: "", pos: "noun" },
-                        Candle: { viet: "Nến", pos: "noun" },
-                        stick: { viet: "thanh", pos: "noun" },
-                        of: { viet: "của", pos: "preposition" },
-                        wax: { viet: "sáp", pos: "noun" },
-                        with: { viet: "có", pos: "preposition" },
-                        wick: { viet: "bấc", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        lighting: { viet: "thắp sáng", pos: "verb" },
-                        smells: { viet: "có mùi", pos: "verb" },
-                        like: { viet: "như", pos: "preposition" },
-                        vanilla: { viet: "vani", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Broom",
-                    vietnamese: "Chổi",
-                    englishDef: "A tool with bristles for sweeping.",
-                    vietnameseDef: "Dụng cụ có lông để quét.",
-                    clozeSentence:
-                        "I swept the <span class='sentence-highlight'>floor</span> with a <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi quét <span class='sentence-highlight'>sàn</span> với <span class='word-highlight'>chổi</span>.",
-                    example:
-                        "The <span class='word-highlight'>broom</span> is in the <span class='sentence-highlight'>closet</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Chổi</span> ở trong <span class='sentence-highlight'>tủ</span>.",
-                    options: ["Mop", "Broom", "Vacuum", "Rake"],
-                    tip: "Nghĩ '<span class='word-highlight'>broom</span>' như 'bloom' (nở), vì <span class='word-highlight'>chổi</span> làm sạch như hoa nở.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        swept: { viet: "quét", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        floor: { viet: "sàn", pos: "noun" },
-                        with: { viet: "với", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        Broom: { viet: "Chổi", pos: "noun" },
-                        tool: { viet: "dụng cụ", pos: "noun" },
-                        bristles: { viet: "lông", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        sweeping: { viet: "quét", pos: "verb" },
-                        is: { viet: "ở", pos: "verb" },
-                        in: { viet: "trong", pos: "preposition" },
-                        closet: { viet: "tủ", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Umbrella",
-                    vietnamese: "Ô",
-                    englishDef: "A device for protection from rain or sun.",
-                    vietnameseDef: "Thiết bị che mưa hoặc nắng.",
-                    clozeSentence:
-                        "I brought an <span class='word-highlight'>____</span> because of the <span class='sentence-highlight'>rain</span>.",
-                    clozeVietnamese:
-                        "Tôi mang <span class='word-highlight'>ô</span> vì <span class='sentence-highlight'>mưa</span>.",
-                    example:
-                        "My <span class='word-highlight'>umbrella</span> is <span class='sentence-highlight'>red</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Ô</span> của tôi màu <span class='sentence-highlight'>đỏ</span>.",
-                    options: ["Hat", "Umbrella", "Jacket", "Scarf"],
-                    tip: "Liên kết '<span class='word-highlight'>umbrella</span>' với 'umber' (bóng), vì <span class='word-highlight'>ô</span> tạo bóng che.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        brought: { viet: "mang", pos: "verb" },
-                        an: { viet: "", pos: "article" },
-                        because: { viet: "vì", pos: "conjunction" },
-                        of: { viet: "", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        rain: { viet: "mưa", pos: "noun" },
-                        Umbrella: { viet: "Ô", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        protection: { viet: "che", pos: "noun" },
-                        from: { viet: "khỏi", pos: "preposition" },
-                        sun: { viet: "nắng", pos: "noun" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        is: { viet: "là", pos: "verb" },
-                        red: { viet: "đỏ", pos: "adjective" },
-                    },
-                },
-                {
-                    word: "Pillow",
-                    vietnamese: "Gối",
-                    englishDef:
-                        "A cushion for supporting the head during sleep.",
-                    vietnameseDef: "Đệm để hỗ trợ đầu khi ngủ.",
-                    clozeSentence:
-                        "I rested my <span class='sentence-highlight'>head</span> on a <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi đặt <span class='sentence-highlight'>đầu</span> lên <span class='word-highlight'>gối</span>.",
-                    example:
-                        "The <span class='word-highlight'>pillow</span> is very <span class='sentence-highlight'>soft</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Gối</span> rất <span class='sentence-highlight'>mềm</span>.",
-                    options: ["Blanket", "Pillow", "Mattress", "Sheet"],
-                    tip: "Nghĩ '<span class='word-highlight'>pillow</span>' như 'pill' (viên), vì <span class='word-highlight'>gối</span> tròn như viên thuốc.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        rested: { viet: "đặt", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        head: { viet: "đầu", pos: "noun" },
-                        on: { viet: "lên", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        Pillow: { viet: "Gối", pos: "noun" },
-                        cushion: { viet: "đệm", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        supporting: { viet: "hỗ trợ", pos: "verb" },
-                        during: { viet: "khi", pos: "preposition" },
-                        sleep: { viet: "ngủ", pos: "noun" },
-                        is: { viet: "là", pos: "verb" },
-                        very: { viet: "rất", pos: "adverb" },
-                        soft: { viet: "mềm", pos: "adjective" },
-                    },
-                },
-                {
-                    word: "Backpack",
-                    vietnamese: "Ba lô",
-                    englishDef: "A bag carried on the back for holding items.",
-                    vietnameseDef: "Túi đeo trên lưng để đựng đồ.",
+                    word: 'Suitcase',
+                    vietnamese: 'Va li',
+                    englishDef: 'A case for carrying clothes during travel.',
+                    vietnameseDef: 'Hộp để mang quần áo khi đi du lịch.',
                     clozeSentence:
                         "I packed my <span class='word-highlight'>____</span> for the <span class='sentence-highlight'>trip</span>.",
                     clozeVietnamese:
-                        "Tôi đóng gói <span class='word-highlight'>ba lô</span> cho <span class='sentence-highlight'>chuyến đi</span>.",
+                        "Tôi đóng gói <span class='word-highlight'>va li</span> cho <span class='sentence-highlight'>chuyến đi</span>.",
                     example:
-                        "The <span class='word-highlight'>backpack</span> is full of <span class='sentence-highlight'>books</span>.",
+                        "The <span class='word-highlight'>suitcase</span> has <span class='sentence-highlight'>wheels</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Ba lô</span> đầy <span class='sentence-highlight'>sách</span>.",
-                    options: ["Backpack", "Suitcase", "Wallet", "Purse"],
-                    tip: "Nghĩ '<span class='word-highlight'>backpack</span>' như 'back' (lưng), vì <span class='word-highlight'>ba lô</span> đeo trên lưng.",
+                        "<span class='word-highlight'>Va li</span> có <span class='sentence-highlight'>bánh xe</span>.",
+                    options: ['Backpack', 'Suitcase', 'Bag', 'Purse'],
+                    tip: "Liên kết '<span class='word-highlight'>suitcase</span>' với 'suit', vì <span class='word-highlight'>va li</span> chứa quần áo du lịch.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        packed: { viet: "đóng gói", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        for: { viet: "cho", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        trip: { viet: "chuyến đi", pos: "noun" },
-                        Backpack: { viet: "Ba lô", pos: "noun" },
-                        bag: { viet: "túi", pos: "noun" },
-                        carried: { viet: "đeo", pos: "verb" },
-                        on: { viet: "trên", pos: "preposition" },
-                        back: { viet: "lưng", pos: "noun" },
-                        holding: { viet: "đựng", pos: "verb" },
-                        items: { viet: "đồ", pos: "noun" },
-                        is: { viet: "là", pos: "verb" },
-                        full: { viet: "đầy", pos: "adjective" },
-                        of: { viet: "của", pos: "preposition" },
-                        books: { viet: "sách", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        packed: { viet: 'đóng gói', pos: 'verb' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        for: { viet: 'cho', pos: 'preposition' },
+                        the: { viet: '', pos: 'article' },
+                        trip: { viet: 'chuyến đi', pos: 'noun' },
+                        Suitcase: { viet: 'Va li', pos: 'noun' },
+                        case: { viet: 'hộp', pos: 'noun' },
+                        carrying: { viet: 'mang', pos: 'verb' },
+                        clothes: { viet: 'quần áo', pos: 'noun' },
+                        during: { viet: 'khi', pos: 'preposition' },
+                        travel: { viet: 'du lịch', pos: 'noun' },
+                        has: { viet: 'có', pos: 'verb' },
+                        wheels: { viet: 'bánh xe', pos: 'noun' },
                     },
                 },
                 {
-                    word: "Mirror",
-                    vietnamese: "Gương",
-                    englishDef: "A reflective surface for viewing oneself.",
-                    vietnameseDef: "Bề mặt phản chiếu để nhìn bản thân.",
-                    clozeSentence:
-                        "I looked in the <span class='word-highlight'>____</span> to check my <span class='sentence-highlight'>hair</span>.",
-                    clozeVietnamese:
-                        "Tôi nhìn vào <span class='word-highlight'>gương</span> để kiểm tra <span class='sentence-highlight'>tóc</span>.",
-                    example:
-                        "The <span class='word-highlight'>mirror</span> hangs on the <span class='sentence-highlight'>wall</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Gương</span> treo trên <span class='sentence-highlight'>tường</span>.",
-                    options: ["Window", "Mirror", "Screen", "Painting"],
-                    tip: "Liên kết '<span class='word-highlight'>mirror</span>' với 'image', vì <span class='word-highlight'>gương</span> phản chiếu hình ảnh.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        looked: { viet: "nhìn", pos: "verb" },
-                        in: { viet: "vào", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        check: { viet: "kiểm tra", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        hair: { viet: "tóc", pos: "noun" },
-                        Mirror: { viet: "Gương", pos: "noun" },
-                        reflective: { viet: "phản chiếu", pos: "adjective" },
-                        surface: { viet: "bề mặt", pos: "noun" },
-                        viewing: { viet: "nhìn", pos: "verb" },
-                        oneself: { viet: "bản thân", pos: "pronoun" },
-                        hangs: { viet: "treo", pos: "verb" },
-                        on: { viet: "trên", pos: "preposition" },
-                        wall: { viet: "tường", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Clock",
-                    vietnamese: "Đồng hồ",
-                    englishDef: "A device for measuring time.",
-                    vietnameseDef: "Thiết bị để đo thời gian.",
-                    clozeSentence:
-                        "The <span class='word-highlight'>____</span> shows the <span class='sentence-highlight'>time</span>.",
-                    clozeVietnamese:
-                        "<span class='word-highlight'>Đồng hồ</span> hiển thị <span class='sentence-highlight'>thời gian</span>.",
-                    example:
-                        "I set the <span class='word-highlight'>clock</span> for <span class='sentence-highlight'>7 AM</span>.",
-                    exampleVietnamese:
-                        "Tôi đặt <span class='word-highlight'>đồng hồ</span> vào <span class='sentence-highlight'>7 giờ sáng</span>.",
-                    options: ["Calendar", "Clock", "Watch", "Timer"],
-                    tip: "Nghĩ '<span class='word-highlight'>clock</span>' như 'tick-tock', vì <span class='word-highlight'>đồng hồ</span> đo thời gian.",
-                    wordMap: {
-                        The: { viet: "", pos: "article" },
-                        shows: { viet: "hiển thị", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        time: { viet: "thời gian", pos: "noun" },
-                        Clock: { viet: "Đồng hồ", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        measuring: { viet: "đo", pos: "verb" },
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        set: { viet: "đặt", pos: "verb" },
-                        for: { viet: "vào", pos: "preposition" },
-                        7: { viet: "7", pos: "number" },
-                        AM: { viet: "giờ sáng", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Towel",
-                    vietnamese: "Khăn tắm",
+                    word: 'Purse',
+                    vietnamese: 'Túi xách',
                     englishDef:
-                        "A piece of cloth for drying the body or surfaces.",
-                    vietnameseDef: "Tấm vải để lau khô cơ thể hoặc bề mặt.",
+                        'A small bag for holding money and personal items.',
+                    vietnameseDef: 'Túi nhỏ để đựng tiền và đồ cá nhân.',
                     clozeSentence:
-                        "I grabbed a <span class='word-highlight'>____</span> after my <span class='sentence-highlight'>shower</span>.",
+                        "I put my <span class='sentence-highlight'>phone</span> in my <span class='word-highlight'>____</span>.",
                     clozeVietnamese:
-                        "Tôi lấy <span class='word-highlight'>khăn tắm</span> sau khi <span class='sentence-highlight'>tắm</span>.",
+                        "Tôi để <span class='sentence-highlight'>điện thoại</span> vào <span class='word-highlight'>túi xách</span>.",
                     example:
-                        "The <span class='word-highlight'>towel</span> is on the <span class='sentence-highlight'>rack</span>.",
+                        "The <span class='word-highlight'>purse</span> is on the <span class='sentence-highlight'>table</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Khăn tắm</span> ở trên <span class='sentence-highlight'>giá treo</span>.",
-                    options: ["Napkin", "Towel", "Blanket", "Cloth"],
-                    tip: "Nghĩ '<span class='word-highlight'>towel</span>' như 'dry', vì <span class='word-highlight'>khăn tắm</span> dùng để lau khô.",
+                        "<span class='word-highlight'>Túi xách</span> ở trên <span class='sentence-highlight'>bàn</span>.",
+                    options: ['Wallet', 'Purse', 'Backpack', 'Suitcase'],
+                    tip: "Liên kết '<span class='word-highlight'>purse</span>' với 'personal', vì <span class='word-highlight'>túi xách</span> chứa đồ cá nhân.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        grabbed: { viet: "lấy", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        after: { viet: "sau khi", pos: "preposition" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        shower: { viet: "tắm", pos: "noun" },
-                        Towel: { viet: "Khăn tắm", pos: "noun" },
-                        piece: { viet: "tấm", pos: "noun" },
-                        of: { viet: "của", pos: "preposition" },
-                        cloth: { viet: "vải", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        drying: { viet: "lau khô", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        body: { viet: "cơ thể", pos: "noun" },
-                        surfaces: { viet: "bề mặt", pos: "noun" },
-                        is: { viet: "ở", pos: "verb" },
-                        on: { viet: "trên", pos: "preposition" },
-                        rack: { viet: "giá treo", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        put: { viet: 'để', pos: 'verb' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        phone: { viet: 'điện thoại', pos: 'noun' },
+                        in: { viet: 'vào', pos: 'preposition' },
+                        Purse: { viet: 'Túi xách', pos: 'noun' },
+                        small: { viet: 'nhỏ', pos: 'adjective' },
+                        bag: { viet: 'túi', pos: 'noun' },
+                        holding: { viet: 'đựng', pos: 'verb' },
+                        money: { viet: 'tiền', pos: 'noun' },
+                        personal: { viet: 'cá nhân', pos: 'adjective' },
+                        items: { viet: 'đồ', pos: 'noun' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        table: { viet: 'bàn', pos: 'noun' },
                     },
                 },
                 {
-                    word: "Key",
-                    vietnamese: "Chìa khóa",
-                    englishDef: "A metal tool for locking or unlocking.",
-                    vietnameseDef: "Dụng cụ kim loại để khóa hoặc mở khóa.",
+                    word: 'Glasses',
+                    vietnamese: 'Kính mắt',
+                    englishDef: 'A pair of lenses for correcting vision.',
+                    vietnameseDef: 'Cặp thấu kính để điều chỉnh thị lực.',
                     clozeSentence:
-                        "I lost my <span class='word-highlight'>____</span> to the <span class='sentence-highlight'>house</span>.",
+                        "I wore my <span class='word-highlight'>____</span> to read the <span class='sentence-highlight'>book</span>.",
                     clozeVietnamese:
-                        "Tôi làm mất <span class='word-highlight'>chìa khóa</span> của <span class='sentence-highlight'>nhà</span>.",
+                        "Tôi đeo <span class='word-highlight'>kính mắt</span> để đọc <span class='sentence-highlight'>sách</span>.",
                     example:
-                        "The <span class='word-highlight'>key</span> is on the <span class='sentence-highlight'>table</span>.",
+                        "My <span class='word-highlight'>glasses</span> are on the <span class='sentence-highlight'>desk</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Chìa khóa</span> ở trên <span class='sentence-highlight'>bàn</span>.",
-                    options: ["Lock", "Key", "Handle", "Knob"],
-                    tip: "Nghĩ '<span class='word-highlight'>key</span>' như 'access', vì <span class='word-highlight'>chìa khóa</span> cho phép vào.",
+                        "<span class='word-highlight'>Kính mắt</span> ở trên <span class='sentence-highlight'>bàn làm việc</span>.",
+                    options: ['Sunglasses', 'Glasses', 'Mirror', 'Lens'],
+                    tip: "Liên kết '<span class='word-highlight'>glasses</span>' với 'see', vì <span class='word-highlight'>kính mắt</span> giúp nhìn rõ.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        lost: { viet: "làm mất", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        to: { viet: "của", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        house: { viet: "nhà", pos: "noun" },
-                        Key: { viet: "Chìa khóa", pos: "noun" },
-                        metal: { viet: "kim loại", pos: "noun" },
-                        tool: { viet: "dụng cụ", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        locking: { viet: "khóa", pos: "verb" },
-                        or: { viet: "hoặc", pos: "conjunction" },
-                        unlocking: { viet: "mở khóa", pos: "verb" },
-                        is: { viet: "ở", pos: "verb" },
-                        on: { viet: "trên", pos: "preposition" },
-                        table: { viet: "bàn", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        wore: { viet: 'đeo', pos: 'verb' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        to: { viet: 'để', pos: 'preposition' },
+                        read: { viet: 'đọc', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        book: { viet: 'sách', pos: 'noun' },
+                        Glasses: { viet: 'Kính mắt', pos: 'noun' },
+                        pair: { viet: 'cặp', pos: 'noun' },
+                        lenses: { viet: 'thấu kính', pos: 'noun' },
+                        correcting: { viet: 'điều chỉnh', pos: 'verb' },
+                        vision: { viet: 'thị lực', pos: 'noun' },
+                        are: { viet: 'ở', pos: 'verb' },
+                        on: { viet: 'trên', pos: 'preposition' },
+                        desk: { viet: 'bàn làm việc', pos: 'noun' },
                     },
                 },
                 {
-                    word: "Lamp",
-                    vietnamese: "Đèn",
-                    englishDef: "A device that produces light.",
-                    vietnameseDef: "Thiết bị tạo ra ánh sáng.",
-                    clozeSentence:
-                        "I turned on the <span class='word-highlight'>____</span> to read my <span class='sentence-highlight'>book</span>.",
-                    clozeVietnamese:
-                        "Tôi bật <span class='word-highlight'>đèn</span> để đọc <span class='sentence-highlight'>sách</span>.",
-                    example:
-                        "The <span class='word-highlight'>lamp</span> is on the <span class='sentence-highlight'>desk</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Đèn</span> ở trên <span class='sentence-highlight'>bàn làm việc</span>.",
-                    options: ["Candle", "Lamp", "Flashlight", "Bulb"],
-                    tip: "Nghĩ '<span class='word-highlight'>lamp</span>' như 'light', vì <span class='word-highlight'>đèn</span> tạo ánh sáng.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        turned: { viet: "bật", pos: "verb" },
-                        on: { viet: "", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        read: { viet: "đọc", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        book: { viet: "sách", pos: "noun" },
-                        Lamp: { viet: "Đèn", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        produces: { viet: "tạo ra", pos: "verb" },
-                        light: { viet: "ánh sáng", pos: "noun" },
-                        is: { viet: "ở", pos: "verb" },
-                        desk: { viet: "bàn làm việc", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Pen",
-                    vietnamese: "Bút",
-                    englishDef: "A tool for writing or drawing with ink.",
-                    vietnameseDef: "Dụng cụ để viết hoặc vẽ bằng mực.",
-                    clozeSentence:
-                        "I wrote a <span class='sentence-highlight'>note</span> with my <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi viết <span class='sentence-highlight'>ghi chú</span> bằng <span class='word-highlight'>bút</span>.",
-                    example:
-                        "The <span class='word-highlight'>pen</span> ran out of <span class='sentence-highlight'>ink</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Bút</span> hết <span class='sentence-highlight'>mực</span>.",
-                    options: ["Pencil", "Pen", "Marker", "Crayon"],
-                    tip: "Nghĩ '<span class='word-highlight'>pen</span>' như 'point', vì <span class='word-highlight'>bút</span> có đầu nhọn để viết.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        wrote: { viet: "viết", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        note: { viet: "ghi chú", pos: "noun" },
-                        with: { viet: "bằng", pos: "preposition" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        Pen: { viet: "Bút", pos: "noun" },
-                        tool: { viet: "dụng cụ", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        writing: { viet: "viết", pos: "verb" },
-                        drawing: { viet: "vẽ", pos: "verb" },
-                        ink: { viet: "mực", pos: "noun" },
-                        ran: { viet: "hết", pos: "verb" },
-                        out: { viet: "", pos: "adverb" },
-                        of: { viet: "", pos: "preposition" },
-                    },
-                },
-                {
-                    word: "Shampoo",
-                    vietnamese: "Dầu gội",
-                    englishDef: "A liquid for washing hair.",
-                    vietnameseDef: "Chất lỏng để gội đầu.",
-                    clozeSentence:
-                        "I used <span class='word-highlight'>____</span> to wash my <span class='sentence-highlight'>hair</span>.",
-                    clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>dầu gội</span> để gội <span class='sentence-highlight'>tóc</span>.",
-                    example:
-                        "This <span class='word-highlight'>shampoo</span> smells like <span class='sentence-highlight'>flowers</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Dầu gội</span> này có mùi <span class='sentence-highlight'>hoa</span>.",
-                    options: ["Soap", "Shampoo", "Lotion", "Cream"],
-                    tip: "Nghĩ '<span class='word-highlight'>shampoo</span>' như 'shine', vì <span class='word-highlight'>dầu gội</span> làm tóc sạch bóng.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        to: { viet: "để", pos: "preposition" },
-                        wash: { viet: "gội", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        hair: { viet: "tóc", pos: "noun" },
-                        Shampoo: { viet: "Dầu gội", pos: "noun" },
-                        liquid: { viet: "chất lỏng", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        washing: { viet: "gội", pos: "verb" },
-                        this: { viet: "này", pos: "pronoun" },
-                        smells: { viet: "có mùi", pos: "verb" },
-                        like: { viet: "như", pos: "preposition" },
-                        flowers: { viet: "hoa", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Plate",
-                    vietnamese: "Đĩa",
-                    englishDef: "A flat dish for serving food.",
-                    vietnameseDef: "Dụng cụ phẳng để đựng thức ăn.",
-                    clozeSentence:
-                        "I put the <span class='sentence-highlight'>food</span> on a <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi để <span class='sentence-highlight'>thức ăn</span> lên <span class='word-highlight'>đĩa</span>.",
-                    example:
-                        "The <span class='word-highlight'>plate</span> is in the <span class='sentence-highlight'>sink</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Đĩa</span> ở trong <span class='sentence-highlight'>bồn rửa</span>.",
-                    options: ["Bowl", "Plate", "Cup", "Spoon"],
-                    tip: "Nghĩ '<span class='word-highlight'>plate</span>' như 'place', vì <span class='word-highlight'>đĩa</span> là nơi đặt thức ăn.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        put: { viet: "để", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        food: { viet: "thức ăn", pos: "noun" },
-                        on: { viet: "lên", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        Plate: { viet: "Đĩa", pos: "noun" },
-                        flat: { viet: "phẳng", pos: "adjective" },
-                        dish: { viet: "dụng cụ", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        serving: { viet: "đựng", pos: "verb" },
-                        is: { viet: "ở", pos: "verb" },
-                        in: { viet: "trong", pos: "preposition" },
-                        sink: { viet: "bồn rửa", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Spoon",
-                    vietnamese: "Thìa",
-                    englishDef: "A utensil for eating or serving food.",
-                    vietnameseDef: "Dụng cụ để ăn hoặc múc thức ăn.",
-                    clozeSentence:
-                        "I ate my <span class='sentence-highlight'>soup</span> with a <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi ăn <span class='sentence-highlight'>súp</span> bằng <span class='word-highlight'>thìa</span>.",
-                    example:
-                        "The <span class='word-highlight'>spoon</span> is in the <span class='sentence-highlight'>drawer</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Thìa</span> ở trong <span class='sentence-highlight'>ngăn kéo</span>.",
-                    options: ["Fork", "Spoon", "Knife", "Chopstick"],
-                    tip: "Nghĩ '<span class='word-highlight'>spoon</span>' như 'scoop', vì <span class='word-highlight'>thìa</span> dùng để múc.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        ate: { viet: "ăn", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        soup: { viet: "súp", pos: "noun" },
-                        with: { viet: "bằng", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        Spoon: { viet: "Thìa", pos: "noun" },
-                        utensil: { viet: "dụng cụ", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        eating: { viet: "ăn", pos: "verb" },
-                        serving: { viet: "múc", pos: "verb" },
-                        food: { viet: "thức ăn", pos: "noun" },
-                        is: { viet: "ở", pos: "verb" },
-                        in: { viet: "trong", pos: "preposition" },
-                        drawer: { viet: "ngăn kéo", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Fork",
-                    vietnamese: "Nĩa",
-                    englishDef: "A utensil with prongs for eating food.",
-                    vietnameseDef: "Dụng cụ có răng để ăn thức ăn.",
-                    clozeSentence:
-                        "I used a <span class='word-highlight'>____</span> to eat my <span class='sentence-highlight'>salad</span>.",
-                    clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>nĩa</span> để ăn <span class='sentence-highlight'>salad</span>.",
-                    example:
-                        "The <span class='word-highlight'>fork</span> is next to the <span class='sentence-highlight'>plate</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Nĩa</span> ở bên cạnh <span class='sentence-highlight'>đĩa</span>.",
-                    options: ["Spoon", "Fork", "Knife", "Chopstick"],
-                    tip: "Nghĩ '<span class='word-highlight'>fork</span>' như 'prong', vì <span class='word-highlight'>nĩa</span> có răng để xiên.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        eat: { viet: "ăn", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        salad: { viet: "salad", pos: "noun" },
-                        Fork: { viet: "Nĩa", pos: "noun" },
-                        utensil: { viet: "dụng cụ", pos: "noun" },
-                        with: { viet: "có", pos: "preposition" },
-                        prongs: { viet: "răng", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        eating: { viet: "ăn", pos: "verb" },
-                        food: { viet: "thức ăn", pos: "noun" },
-                        is: { viet: "ở", pos: "verb" },
-                        next: { viet: "bên cạnh", pos: "preposition" },
-                        to: { viet: "", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        plate: { viet: "đĩa", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Knife",
-                    vietnamese: "Dao",
-                    englishDef: "A tool with a blade for cutting.",
-                    vietnameseDef: "Dụng cụ có lưỡi để cắt.",
-                    clozeSentence:
-                        "I used a <span class='word-highlight'>____</span> to cut the <span class='sentence-highlight'>bread</span>.",
-                    clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>dao</span> để cắt <span class='sentence-highlight'>bánh mì</span>.",
-                    example:
-                        "The <span class='word-highlight'>knife</span> is very <span class='sentence-highlight'>sharp</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Dao</span> rất <span class='sentence-highlight'>sắc</span>.",
-                    options: ["Scissors", "Knife", "Spoon", "Fork"],
-                    tip: "Nghĩ '<span class='word-highlight'>knife</span>' như 'cut', vì <span class='word-highlight'>dao</span> dùng để cắt.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        cut: { viet: "cắt", pos: "verb" },
-                        the: { viet: "", pos: "article" },
-                        bread: { viet: "bánh mì", pos: "noun" },
-                        Knife: { viet: "Dao", pos: "noun" },
-                        tool: { viet: "dụng cụ", pos: "noun" },
-                        with: { viet: "có", pos: "preposition" },
-                        blade: { viet: "lưỡi", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        cutting: { viet: "cắt", pos: "verb" },
-                        is: { viet: "là", pos: "verb" },
-                        very: { viet: "rất", pos: "adverb" },
-                        sharp: { viet: "sắc", pos: "adjective" },
-                    },
-                },
-                {
-                    word: "Cup",
-                    vietnamese: "Cốc",
-                    englishDef: "A small container for drinking.",
-                    vietnameseDef: "Hộp nhỏ để uống.",
-                    clozeSentence:
-                        "I drank <span class='sentence-highlight'>coffee</span> from a <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi uống <span class='sentence-highlight'>cà phê</span> từ <span class='word-highlight'>cốc</span>.",
-                    example:
-                        "The <span class='word-highlight'>cup</span> is on the <span class='sentence-highlight'>table</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Cốc</span> ở trên <span class='sentence-highlight'>bàn</span>.",
-                    options: ["Bowl", "Cup", "Plate", "Glass"],
-                    tip: "Nghĩ '<span class='word-highlight'>cup</span>' như 'contain', vì <span class='word-highlight'>cốc</span> chứa đồ uống.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        drank: { viet: "uống", pos: "verb" },
-                        coffee: { viet: "cà phê", pos: "noun" },
-                        from: { viet: "từ", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        Cup: { viet: "Cốc", pos: "noun" },
-                        small: { viet: "nhỏ", pos: "adjective" },
-                        container: { viet: "hộp", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        drinking: { viet: "uống", pos: "verb" },
-                        is: { viet: "ở", pos: "verb" },
-                        on: { viet: "trên", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        table: { viet: "bàn", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Chair",
-                    vietnamese: "Ghế",
-                    englishDef: "A seat for one person with a backrest.",
-                    vietnameseDef: "Chỗ ngồi cho một người có lưng tựa.",
-                    clozeSentence:
-                        "I sat on the <span class='word-highlight'>____</span> during <span class='sentence-highlight'>dinner</span>.",
-                    clozeVietnamese:
-                        "Tôi ngồi trên <span class='word-highlight'>ghế</span> trong <span class='sentence-highlight'>bữa tối</span>.",
-                    example:
-                        "The <span class='word-highlight'>chair</span> is very <span class='sentence-highlight'>comfortable</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Ghế</span> rất <span class='sentence-highlight'>thoải mái</span>.",
-                    options: ["Table", "Chair", "Sofa", "Bed"],
-                    tip: "Nghĩ '<span class='word-highlight'>chair</span>' như 'sit', vì <span class='word-highlight'>ghế</span> dùng để ngồi.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        sat: { viet: "ngồi", pos: "verb" },
-                        on: { viet: "trên", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        during: { viet: "trong", pos: "preposition" },
-                        dinner: { viet: "bữa tối", pos: "noun" },
-                        Chair: { viet: "Ghế", pos: "noun" },
-                        seat: { viet: "chỗ ngồi", pos: "noun" },
-                        for: { viet: "cho", pos: "preposition" },
-                        one: { viet: "một", pos: "number" },
-                        person: { viet: "người", pos: "noun" },
-                        with: { viet: "có", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        backrest: { viet: "lưng tựa", pos: "noun" },
-                        is: { viet: "là", pos: "verb" },
-                        very: { viet: "rất", pos: "adverb" },
-                        comfortable: { viet: "thoải mái", pos: "adjective" },
-                    },
-                },
-                {
-                    word: "Table",
-                    vietnamese: "Bàn",
-                    englishDef: "A piece of furniture with a flat surface.",
-                    vietnameseDef: "Món đồ nội thất có bề mặt phẳng.",
-                    clozeSentence:
-                        "I put my <span class='sentence-highlight'>books</span> on the <span class='word-highlight'>____</span>.",
-                    clozeVietnamese:
-                        "Tôi để <span class='sentence-highlight'>sách</span> lên <span class='word-highlight'>bàn</span>.",
-                    example:
-                        "The <span class='word-highlight'>table</span> is in the <span class='sentence-highlight'>kitchen</span>.",
-                    exampleVietnamese:
-                        "<span class='word-highlight'>Bàn</span> ở trong <span class='sentence-highlight'>bếp</span>.",
-                    options: ["Chair", "Table", "Shelf", "Desk"],
-                    tip: "Nghĩ '<span class='word-highlight'>table</span>' như 'top', vì <span class='word-highlight'>bàn</span> có mặt phẳng trên cùng.",
-                    wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        put: { viet: "để", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        books: { viet: "sách", pos: "noun" },
-                        on: { viet: "lên", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        Table: { viet: "Bàn", pos: "noun" },
-                        piece: { viet: "món", pos: "noun" },
-                        of: { viet: "của", pos: "preposition" },
-                        furniture: { viet: "đồ nội thất", pos: "noun" },
-                        with: { viet: "có", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        flat: { viet: "phẳng", pos: "adjective" },
-                        surface: { viet: "bề mặt", pos: "noun" },
-                        is: { viet: "ở", pos: "verb" },
-                        in: { viet: "trong", pos: "preposition" },
-                        kitchen: { viet: "bếp", pos: "noun" },
-                    },
-                },
-                {
-                    word: "Brush",
-                    vietnamese: "Bàn chải",
+                    word: 'Scarf',
+                    vietnamese: 'Khăn quàng',
                     englishDef:
-                        "A tool with bristles for cleaning or grooming.",
-                    vietnameseDef: "Dụng cụ có lông để làm sạch hoặc chải.",
+                        'A piece of cloth worn around the neck for warmth.',
+                    vietnameseDef: 'Tấm vải đeo quanh cổ để giữ ấm.',
                     clozeSentence:
-                        "I used a <span class='word-highlight'>____</span> to clean my <span class='sentence-highlight'>teeth</span>.",
+                        "I wore a <span class='word-highlight'>____</span> during the <span class='sentence-highlight'>cold day</span>.",
                     clozeVietnamese:
-                        "Tôi dùng <span class='word-highlight'>bàn chải</span> để làm sạch <span class='sentence-highlight'>răng</span>.",
+                        "Tôi đeo <span class='word-highlight'>khăn quàng</span> vào <span class='sentence-highlight'>ngày lạnh</span>.",
                     example:
-                        "The <span class='word-highlight'>brush</span> is in the <span class='sentence-highlight'>bathroom</span>.",
+                        "The <span class='word-highlight'>scarf</span> is very <span class='sentence-highlight'>soft</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Bàn chải</span> ở trong <span class='sentence-highlight'>phòng tắm</span>.",
-                    options: ["Comb", "Brush", "Sponge", "Cloth"],
-                    tip: "Nghĩ '<span class='word-highlight'>brush</span>' như 'bristles', vì <span class='word-highlight'>bàn chải</span> có lông để chải.",
+                        "<span class='word-highlight'>Khăn quàng</span> rất <span class='sentence-highlight'>mềm</span>.",
+                    options: ['Hat', 'Scarf', 'Jacket', 'Gloves'],
+                    tip: "Liên kết '<span class='word-highlight'>scarf</span>' với 'warm', vì <span class='word-highlight'>khăn quàng</span> giữ ấm cổ.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        used: { viet: "dùng", pos: "verb" },
-                        a: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        clean: { viet: "làm sạch", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        teeth: { viet: "răng", pos: "noun" },
-                        Brush: { viet: "Bàn chải", pos: "noun" },
-                        tool: { viet: "dụng cụ", pos: "noun" },
-                        with: { viet: "có", pos: "preposition" },
-                        bristles: { viet: "lông", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        cleaning: { viet: "làm sạch", pos: "verb" },
-                        grooming: { viet: "chải", pos: "verb" },
-                        is: { viet: "ở", pos: "verb" },
-                        in: { viet: "trong", pos: "preposition" },
-                        bathroom: { viet: "phòng tắm", pos: "noun" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        wore: { viet: 'đeo', pos: 'verb' },
+                        a: { viet: '', pos: 'article' },
+                        during: { viet: 'vào', pos: 'preposition' },
+                        cold: { viet: 'lạnh', pos: 'adjective' },
+                        day: { viet: 'ngày', pos: 'noun' },
+                        Scarf: { viet: 'Khăn quàng', pos: 'noun' },
+                        piece: { viet: 'tấm', pos: 'noun' },
+                        cloth: { viet: 'vải', pos: 'noun' },
+                        worn: { viet: 'đeo', pos: 'verb' },
+                        around: { viet: 'quanh', pos: 'preposition' },
+                        neck: { viet: 'cổ', pos: 'noun' },
+                        for: { viet: 'để', pos: 'preposition' },
+                        warmth: { viet: 'giữ ấm', pos: 'noun' },
+                        is: { viet: 'là', pos: 'verb' },
+                        very: { viet: 'rất', pos: 'adverb' },
+                        soft: { viet: 'mềm', pos: 'adjective' },
                     },
                 },
                 {
-                    word: "Fan",
-                    vietnamese: "Quạt",
-                    englishDef: "A device for creating air flow.",
-                    vietnameseDef: "Thiết bị tạo luồng không khí.",
+                    word: 'Hat',
+                    vietnamese: 'Mũ',
+                    englishDef: 'A covering for the head.',
+                    vietnameseDef: 'Vật che phủ cho đầu.',
                     clozeSentence:
-                        "I turned on the <span class='word-highlight'>____</span> to cool the <span class='sentence-highlight'>room</span>.",
+                        "I wore a <span class='word-highlight'>____</span> on the <span class='sentence-highlight'>sunny day</span>.",
                     clozeVietnamese:
-                        "Tôi bật <span class='word-highlight'>quạt</span> để làm mát <span class='sentence-highlight'>phòng</span>.",
+                        "Tôi đội <span class='word-highlight'>mũ</span> vào <span class='sentence-highlight'>ngày nắng</span>.",
                     example:
-                        "The <span class='word-highlight'>fan</span> is very <span class='sentence-highlight'>quiet</span>.",
+                        "The <span class='word-highlight'>hat</span> is on the <span class='sentence-highlight'>shelf</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Quạt</span> rất <span class='sentence-highlight'>yên tĩnh</span>.",
-                    options: ["Heater", "Fan", "Airconditioner", "Lamp"],
-                    tip: "Nghĩ '<span class='word-highlight'>fan</span>' như 'flow', vì <span class='word-highlight'>quạt</span> tạo luồng gió.",
+                        "<span class='word-highlight'>Mũ</span> ở trên <span class='sentence-highlight'>kệ</span>.",
+                    options: ['Scarf', 'Hat', 'Gloves', 'Jacket'],
+                    tip: "Liên kết '<span class='word-highlight'>hat</span>' với 'head', vì <span class='word-highlight'>mũ</span> đội trên đầu.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        turned: { viet: "bật", pos: "verb" },
-                        on: { viet: "", pos: "preposition" },
-                        the: { viet: "", pos: "article" },
-                        to: { viet: "để", pos: "preposition" },
-                        cool: { viet: "làm mát", pos: "verb" },
-                        room: { viet: "phòng", pos: "noun" },
-                        Fan: { viet: "Quạt", pos: "noun" },
-                        device: { viet: "thiết bị", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        creating: { viet: "tạo", pos: "verb" },
-                        air: { viet: "không khí", pos: "noun" },
-                        flow: { viet: "luồng", pos: "noun" },
-                        is: { viet: "là", pos: "verb" },
-                        very: { viet: "rất", pos: "adverb" },
-                        quiet: { viet: "yên tĩnh", pos: "adjective" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        wore: { viet: 'đội', pos: 'verb' },
+                        a: { viet: '', pos: 'article' },
+                        on: { viet: 'vào', pos: 'preposition' },
+                        sunny: { viet: 'nắng', pos: 'adjective' },
+                        day: { viet: 'ngày', pos: 'noun' },
+                        Hat: { viet: 'Mũ', pos: 'noun' },
+                        covering: { viet: 'che phủ', pos: 'noun' },
+                        for: { viet: 'cho', pos: 'preposition' },
+                        head: { viet: 'đầu', pos: 'noun' },
+                        is: { viet: 'ở', pos: 'verb' },
+                        shelf: { viet: 'kệ', pos: 'noun' },
                     },
                 },
                 {
-                    word: "Bag",
-                    vietnamese: "Túi",
-                    englishDef: "A flexible container for holding items.",
-                    vietnameseDef: "Hộp linh hoạt để đựng đồ.",
+                    word: 'Gloves',
+                    vietnamese: 'Găng tay',
+                    englishDef:
+                        'Coverings for the hands for warmth or protection.',
+                    vietnameseDef: 'Vật che tay để giữ ấm hoặc bảo vệ.',
                     clozeSentence:
-                        "I put my <span class='sentence-highlight'>groceries</span> in a <span class='word-highlight'>____</span>.",
+                        "I wore <span class='word-highlight'>____</span> during the <span class='sentence-highlight'>cold weather</span>.",
                     clozeVietnamese:
-                        "Tôi để <span class='sentence-highlight'>thực phẩm</span> vào <span class='word-highlight'>túi</span>.",
+                        "Tôi đeo <span class='word-highlight'>găng tay</span> trong <span class='sentence-highlight'>thời tiết lạnh</span>.",
                     example:
-                        "The <span class='word-highlight'>bag</span> is very <span class='sentence-highlight'>strong</span>.",
+                        "The <span class='word-highlight'>gloves</span> are in the <span class='sentence-highlight'>drawer</span>.",
                     exampleVietnamese:
-                        "<span class='word-highlight'>Túi</span> rất <span class='sentence-highlight'>chắc chắn</span>.",
-                    options: ["Box", "Bag", "Basket", "Suitcase"],
-                    tip: "Nghĩ '<span class='word-highlight'>bag</span>' như 'bring', vì <span class='word-highlight'>túi</span> dùng để mang đồ.",
+                        "<span class='word-highlight'>Găng tay</span> ở trong <span class='sentence-highlight'>ngăn kéo</span>.",
+                    options: ['Scarf', 'Gloves', 'Hat', 'Socks'],
+                    tip: "Liên kết '<span class='word-highlight'>gloves</span>' với 'love', vì <span class='word-highlight'>găng tay</span> ôm sát tay.",
                     wordMap: {
-                        I: { viet: "Tôi", pos: "pronoun" },
-                        put: { viet: "để", pos: "verb" },
-                        my: { viet: "của tôi", pos: "pronoun" },
-                        groceries: { viet: "thực phẩm", pos: "noun" },
-                        in: { viet: "vào", pos: "preposition" },
-                        a: { viet: "", pos: "article" },
-                        Bag: { viet: "Túi", pos: "noun" },
-                        flexible: { viet: "linh hoạt", pos: "adjective" },
-                        container: { viet: "hộp", pos: "noun" },
-                        for: { viet: "để", pos: "preposition" },
-                        holding: { viet: "đựng", pos: "verb" },
-                        items: { viet: "đồ", pos: "noun" },
-                        is: { viet: "là", pos: "verb" },
-                        very: { viet: "rất", pos: "adverb" },
-                        strong: { viet: "chắc chắn", pos: "adjective" },
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        wore: { viet: 'đeo', pos: 'verb' },
+                        during: { viet: 'trong', pos: 'preposition' },
+                        cold: { viet: 'lạnh', pos: 'adjective' },
+                        weather: { viet: 'thời tiết', pos: 'noun' },
+                        Gloves: { viet: 'Găng tay', pos: 'noun' },
+                        coverings: { viet: 'vật che', pos: 'noun' },
+                        for: { viet: 'cho', pos: 'preposition' },
+                        hands: { viet: 'tay', pos: 'noun' },
+                        warmth: { viet: 'giữ ấm', pos: 'noun' },
+                        protection: { viet: 'bảo vệ', pos: 'noun' },
+                        are: { viet: 'ở', pos: 'verb' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        drawer: { viet: 'ngăn kéo', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Socks',
+                    vietnamese: 'Tất',
+                    englishDef: 'Coverings for the feet for warmth.',
+                    vietnameseDef: 'Vật che chân để giữ ấm.',
+                    clozeSentence:
+                        "I wore <span class='word-highlight'>____</span> with my <span class='sentence-highlight'>shoes</span>.",
+                    clozeVietnamese:
+                        "Tôi mang <span class='word-highlight'>tất</span> với <span class='sentence-highlight'>giày</span>.",
+                    example:
+                        "The <span class='word-highlight'>socks</span> are in the <span class='sentence-highlight'>drawer</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Tất</span> ở trong <span class='sentence-highlight'>ngăn kéo</span>.",
+                    options: ['Shoes', 'Socks', 'Gloves', 'Scarf'],
+                    tip: "Liên kết '<span class='word-highlight'>socks</span>' với 'soft', vì <span class='word-highlight'>tất</span> thường mềm mại.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        wore: { viet: 'mang', pos: 'verb' },
+                        with: { viet: 'với', pos: 'preposition' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        shoes: { viet: 'giày', pos: 'noun' },
+                        Socks: { viet: 'Tất', pos: 'noun' },
+                        coverings: { viet: 'vật che', pos: 'noun' },
+                        for: { viet: 'cho', pos: 'preposition' },
+                        feet: { viet: 'chân', pos: 'noun' },
+                        warmth: { viet: 'giữ ấm', pos: 'noun' },
+                        are: { viet: 'ở', pos: 'verb' },
+                        in: { viet: 'trong', pos: 'preposition' },
+                        drawer: { viet: 'ngăn kéo', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Shoes',
+                    vietnamese: 'Giày',
+                    englishDef: 'Coverings for the feet for protection.',
+                    vietnameseDef: 'Vật che chân để bảo vệ.',
+                    clozeSentence:
+                        "I wore my <span class='word-highlight'>____</span> to the <span class='sentence-highlight'>park</span>.",
+                    clozeVietnamese:
+                        "Tôi mang <span class='word-highlight'>giày</span> đến <span class='sentence-highlight'>công viên</span>.",
+                    example:
+                        "The <span class='word-highlight'>shoes</span> are by the <span class='sentence-highlight'>door</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Giày</span> ở gần <span class='sentence-highlight'>cửa</span>.",
+                    options: ['Socks', 'Shoes', 'Sandals', 'Boots'],
+                    tip: "Liên kết '<span class='word-highlight'>shoes</span>' với 'step', vì <span class='word-highlight'>giày</span> bảo vệ khi bước đi.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        wore: { viet: 'mang', pos: 'verb' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        to: { viet: 'đến', pos: 'preposition' },
+                        the: { viet: '', pos: 'article' },
+                        park: { viet: 'công viên', pos: 'noun' },
+                        Shoes: { viet: 'Giày', pos: 'noun' },
+                        coverings: { viet: 'vật che', pos: 'noun' },
+                        for: { viet: 'cho', pos: 'preposition' },
+                        feet: { viet: 'chân', pos: 'noun' },
+                        protection: { viet: 'bảo vệ', pos: 'noun' },
+                        are: { viet: 'ở', pos: 'verb' },
+                        by: { viet: 'gần', pos: 'preposition' },
+                        door: { viet: 'cửa', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Belt',
+                    vietnamese: 'Thắt lưng',
+                    englishDef: 'A strip of material worn around the waist.',
+                    vietnameseDef: 'Dải vật liệu đeo quanh eo.',
+                    clozeSentence:
+                        "I wore a <span class='word-highlight'>____</span> with my <span class='sentence-highlight'>pants</span>.",
+                    clozeVietnamese:
+                        "Tôi đeo <span class='word-highlight'>thắt lưng</span> với <span class='sentence-highlight'>quần</span>.",
+                    example:
+                        "The <span class='word-highlight'>belt</span> is made of <span class='sentence-highlight'>leather</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Thắt lưng</span> được làm từ <span class='sentence-highlight'>da</span>.",
+                    options: ['Scarf', 'Belt', 'Hat', 'Gloves'],
+                    tip: "Liên kết '<span class='word-highlight'>belt</span>' với 'tight', vì <span class='word-highlight'>thắt lưng</span> siết chặt quần.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        wore: { viet: 'đeo', pos: 'verb' },
+                        a: { viet: '', pos: 'article' },
+                        with: { viet: 'với', pos: 'preposition' },
+                        my: { viet: 'của tôi', pos: 'pronoun' },
+                        pants: { viet: 'quần', pos: 'noun' },
+                        Belt: { viet: 'Thắt lưng', pos: 'noun' },
+                        strip: { viet: 'dải', pos: 'noun' },
+                        material: { viet: 'vật liệu', pos: 'noun' },
+                        worn: { viet: 'đeo', pos: 'verb' },
+                        around: { viet: 'quanh', pos: 'preposition' },
+                        waist: { viet: 'eo', pos: 'noun' },
+                        is: { viet: 'được', pos: 'verb' },
+                        made: { viet: 'làm', pos: 'verb' },
+                        of: { viet: 'từ', pos: 'preposition' },
+                        leather: { viet: 'da', pos: 'noun' },
+                    },
+                },
+                {
+                    word: 'Watch',
+                    vietnamese: 'Đồng hồ đeo tay',
+                    englishDef:
+                        'A small device for telling time worn on the wrist.',
+                    vietnameseDef: 'Thiết bị nhỏ để xem giờ đeo ở cổ tay.',
+                    clozeSentence:
+                        "I checked the <span class='word-highlight'>____</span> to see the <span class='sentence-highlight'>time</span>.",
+                    clozeVietnamese:
+                        "Tôi nhìn <span class='word-highlight'>đồng hồ đeo tay</span> để xem <span class='sentence-highlight'>giờ</span>.",
+                    example:
+                        "My <span class='word-highlight'>watch</span> is <span class='sentence-highlight'>waterproof</span>.",
+                    exampleVietnamese:
+                        "<span class='word-highlight'>Đồng hồ đeo tay</span> của tôi <span class='sentence-highlight'>chống nước</span>.",
+                    options: ['Clock', 'Watch', 'Timer', 'Calendar'],
+                    tip: "Liên kết '<span class='word-highlight'>watch</span>' với 'wrist', vì <span class='word-highlight'>đồng hồ đeo tay</span> đeo ở cổ tay.",
+                    wordMap: {
+                        I: { viet: 'Tôi', pos: 'pronoun' },
+                        checked: { viet: 'nhìn', pos: 'verb' },
+                        the: { viet: '', pos: 'article' },
+                        to: { viet: 'để', pos: 'preposition' },
+                        see: { viet: 'xem', pos: 'verb' },
+                        time: { viet: 'giờ', pos: 'noun' },
+                        Watch: { viet: 'Đồng hồ đeo tay', pos: 'noun' },
+                        small: { viet: 'nhỏ', pos: 'adjective' },
+                        device: { viet: 'thiết bị', pos: 'noun' },
+                        telling: { viet: 'xem', pos: 'verb' },
+                        worn: { viet: 'đeo', pos: 'verb' },
+                        on: { viet: 'ở', pos: 'preposition' },
+                        wrist: { viet: 'cổ tay', pos: 'noun' },
+                        is: { viet: 'là', pos: 'verb' },
+                        waterproof: { viet: 'chống nước', pos: 'adjective' },
                     },
                 },
             ];
@@ -1826,28 +1181,28 @@
             let currentIndex = 0;
             let answered = false;
 
-            const clozeSentence = document.getElementById("cloze-sentence");
-            const clozeVietnamese = document.getElementById("cloze-vietnamese");
-            const optionsContainer = document.getElementById("options");
-            const feedback = document.getElementById("feedback");
-            const englishDef = document.getElementById("english-def");
-            const vietnameseDef = document.getElementById("vietnamese-def");
-            const example = document.getElementById("example");
+            const clozeSentence = document.getElementById('cloze-sentence');
+            const clozeVietnamese = document.getElementById('cloze-vietnamese');
+            const optionsContainer = document.getElementById('options');
+            const feedback = document.getElementById('feedback');
+            const englishDef = document.getElementById('english-def');
+            const vietnameseDef = document.getElementById('vietnamese-def');
+            const example = document.getElementById('example');
             const exampleVietnamese =
-                document.getElementById("example-vietnamese");
-            const tip = document.getElementById("tip");
-            const nextButton = document.getElementById("next-button");
-            const currentQuestion = document.getElementById("current-question");
-            const totalQuestions = document.getElementById("total-questions");
+                document.getElementById('example-vietnamese');
+            const tip = document.getElementById('tip');
+            const nextButton = document.getElementById('next-button');
+            const currentQuestion = document.getElementById('current-question');
+            const totalQuestions = document.getElementById('total-questions');
 
             const colors = [
-                "#4682b4", // Steel Blue
-                "#32cd32", // Lime Green
-                "#ff4500", // Orange Red
-                "#9932cc", // Dark Orchid
-                "#ff69b4", // Hot Pink
-                "#20b2aa", // Light Sea Green
-                "#b8860b", // Dark Goldenrod
+                '#4682b4', // Steel Blue
+                '#32cd32', // Lime Green
+                '#ff4500', // Orange Red
+                '#9932cc', // Dark Orchid
+                '#ff69b4', // Hot Pink
+                '#20b2aa', // Light Sea Green
+                '#b8860b', // Dark Goldenrod
             ];
 
             function shuffle(array) {
@@ -1869,9 +1224,9 @@
                 )) {
                     if (
                         engWord &&
-                        (pos === "noun" ||
-                            pos === "verb" ||
-                            pos === "adjective" ||
+                        (pos === 'noun' ||
+                            pos === 'verb' ||
+                            pos === 'adjective' ||
                             engWord === vocabWord)
                     ) {
                         const color = colors[colorIndex % colors.length];
@@ -1883,7 +1238,7 @@
 
                 // Apply colors to text
                 for (const [word, color] of Object.entries(colorAssignments)) {
-                    const regex = new RegExp(`\\b${word}\\b(?![^<]*>)`, "g");
+                    const regex = new RegExp(`\\b${word}\\b(?![^<]*>)`, 'g');
                     coloredText = coloredText.replace(
                         regex,
                         `<span style="color: ${color}">${word}</span>`,
@@ -1959,22 +1314,22 @@
                 example.innerHTML = explanations.example;
                 exampleVietnamese.innerHTML = explanations.exampleVietnamese;
                 tip.innerHTML = explanations.tip;
-                feedback.textContent = "";
-                optionsContainer.innerHTML = "";
+                feedback.textContent = '';
+                optionsContainer.innerHTML = '';
                 answered = false;
-                nextButton.style.display = "none";
+                nextButton.style.display = 'none';
 
                 // Hide explanations
-                englishDef.classList.remove("visible");
-                vietnameseDef.classList.remove("visible");
-                example.classList.remove("visible");
-                exampleVietnamese.classList.remove("visible");
-                tip.classList.remove("visible");
+                englishDef.classList.remove('visible');
+                vietnameseDef.classList.remove('visible');
+                example.classList.remove('visible');
+                exampleVietnamese.classList.remove('visible');
+                tip.classList.remove('visible');
 
                 const shuffledOptions = shuffle([...item.options]);
                 shuffledOptions.forEach((option) => {
-                    const button = document.createElement("div");
-                    button.className = "option";
+                    const button = document.createElement('div');
+                    button.className = 'option';
                     button.textContent = option;
                     button.onclick = () => checkAnswer(option, item.word);
                     optionsContainer.appendChild(button);
@@ -1987,37 +1342,37 @@
             function checkAnswer(selected, correct) {
                 if (answered) return;
                 answered = true;
-                const buttons = optionsContainer.querySelectorAll(".option");
+                const buttons = optionsContainer.querySelectorAll('.option');
                 buttons.forEach((button) => {
-                    button.style.pointerEvents = "none";
+                    button.style.pointerEvents = 'none';
                     if (button.textContent === correct) {
-                        button.classList.add("correct");
+                        button.classList.add('correct');
                     }
                     if (
                         button.textContent === selected &&
                         selected !== correct
                     ) {
-                        button.classList.add("incorrect");
+                        button.classList.add('incorrect');
                     }
                 });
                 feedback.textContent =
                     selected === correct
-                        ? "Correct!"
+                        ? 'Correct!'
                         : `Incorrect. The correct answer is "${correct}".`;
                 feedback.className = `feedback ${
                     selected === correct
-                        ? "correct-feedback"
-                        : "incorrect-feedback"
+                        ? 'correct-feedback'
+                        : 'incorrect-feedback'
                 }`;
-                nextButton.style.display = "block";
+                nextButton.style.display = 'block';
 
                 // Show explanations only if correct
                 if (selected === correct) {
-                    englishDef.classList.add("visible");
-                    vietnameseDef.classList.add("visible");
-                    example.classList.add("visible");
-                    exampleVietnamese.classList.add("visible");
-                    tip.classList.add("visible");
+                    englishDef.classList.add('visible');
+                    vietnameseDef.classList.add('visible');
+                    example.classList.add('visible');
+                    exampleVietnamese.classList.add('visible');
+                    tip.classList.add('visible');
                 }
             }
 
